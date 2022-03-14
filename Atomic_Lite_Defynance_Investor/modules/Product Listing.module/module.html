@@ -1,0 +1,53 @@
+<div id="{{ module.custom_id }}" class="atmc-pl-01 {% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {% if module.layout == 'slider' %}{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}{% endif %} {% if module.enable_style_tab and module.styles.shadow.shadow %}shadow-md{% endif %} {{ module.custom_class }}">
+	<div class="atmc-pl-01_repeater {% if module.layout == 'grid' %}atmc-grid atmc-grid-{{ module.items_per_row }}col{% else %}atmc-slider{% endif %}"
+			 {% if module.layout == 'slider' %}
+			 data-slider-item="{{ module.items_per_row }}" 
+			 data-slider-arrows="{% if module.slider_settings.arrows %}true{% else %}false{% endif %}"
+			 data-slider-dots="{% if module.slider_settings.dots %}true{% else %}false{% endif %}"
+			 data-slider-autoplay="{% if module.slider_settings.autoplay %}true{% else %}false{% endif %}"
+			 data-slider-autoplayspeed="{{ module.slider_settings.autoplay_speed }}"
+			 data-slider-infinite="{% if module.slider_settings.infinite %}true{% else %}false{% endif %}"
+			 data-slider-fade="false"
+			 {% endif %}>
+		{% for item in module.repeater %}
+		<div class="atmc-grid-col {% if module.layout != 'slider' %}{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}{% endif %}">
+			<a href="{{ item.url.href }}" class="atmc-pl-01_box {% if item.highlight %}border border-primary{% endif %} atmc-hover-translateY atmc-card text-default {% if !module.enable_style_tab %}text-center{% endif %}">
+				{% if item.image.src %}
+				<img src="{{ item.image.src }}" alt="{{ item.image.alt }}">
+				{% endif %}
+				<div class="atmc-pl-01_detail mt-6">
+					<p class="atmc-pl-01_name"><strong>{{ item.product_name }}</strong></p>
+					<p class="atmc-pl-01_detail atmc-cap">{{ item.detail }}</p>
+					<p class="atmc-pl-01_price">{{ module.currency }}{{ item.price }}</p>
+				</div>
+				{% if item.highlight %}<p class="atmc-pl-01_highlight bg-primary rounded">{{ module.highlight_text }}</p>{% endif %}
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+{% if module.enable_style_tab %}
+	{% require_css %}
+	<style>
+		{% scope_css %}
+			.atmc-pl-01 {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }}
+				{{ module.styles.typography.text_alignment.css }}
+			}
+			{% if module.styles.typography.customize_text_color %}
+			.atmc-pl-01 *:not(a):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+				color: {{ module.styles.typography.text_color.color }};
+				opacity: {{ module.styles.typography.text_color.opacity /100 }};
+			}
+			{% endif %}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %} 
+{% endif %}

@@ -1,0 +1,323 @@
+/*  
+
+form_header_background       
+form_header_text_color       
+form_background_color     
+
+form_border_color            
+form_label_color      
+
+form_field_background_color
+form_field_border_color      
+form_field_focus_border_color
+form_button_text_color       
+form_button_background_color 
+
+*/
+
+
+.widget-type-form .form-title {
+	background: {{ form_header_background }};
+	padding: 2rem;
+	border-radius: {{ border_radius }}px;
+	margin-bottom: 0;
+	color: {{ form_header_text_color }};
+}
+
+.widget-type-form form {
+  padding: 2rem;
+	background: {{ form_background_color }};
+	border: 1px solid {{ form_border_color }};
+}
+
+.hs-form label {
+  font-size: .75rem;
+  display: block;
+  float: none;
+  width: auto;
+  font-weight: normal;
+  text-align: left;
+  line-height: 1.2;
+  padding-top: 0;
+  margin-bottom: .625rem;
+	color: {{ form_label_color }};
+}
+
+.hs-error-msgs label {
+  margin-top: .5rem;
+  color: {{ danger }};
+}
+
+input:not([type=checkbox]):not([type=radio]):not([type=submit]),
+.hs-input,
+.hs-search-field__input {
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 100%!important;
+  height: auto!important;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.2rem;
+  color: {{ base }};
+  background-color: {{ form_field_background_color }};
+	border: 1px solid {{ form_field_border_color }};
+  box-sizing: border-box;
+  border-radius: {{ border_radius }}px;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  -webkit-appearance: none;
+  cursor: pointer;
+  width: 1rem!important;
+  height: 1rem!important;
+  padding: 0!important;
+  margin: 3px 5px 3px 0px;
+  line-height: normal;
+  border: none;
+  background-color: {{ form_field_background_color }};
+  border-radius: {{ border_radius }}px;
+	outline: none;
+}
+
+input[type=radio] {
+  border-radius: 50%;
+}
+
+input[type=checkbox]:checked,
+input[type=radio]:checked {
+  background: {{ success }};
+}
+
+.hs-input[type=file] {
+  background-color: #fff;
+  padding: initial;
+  border: initial;
+  line-height: initial;
+  box-shadow: none;
+}
+
+.hs-input:-moz-placeholder {
+  color: {{ form_placeholder_color }};
+}
+
+.hs-input::-webkit-input-placeholder {
+  color: {{ form_placeholder_color }};
+}
+
+.hs-input input,
+.hs-input textarea {
+  transition: border 0.2s linear;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):focus,
+.hs-input:focus,
+.hs-search-field__input:focus {
+  outline: none;
+  border-color: {{ form_field_focus_border_color }};
+}
+
+textarea.hs-input {
+  height: auto;
+}
+
+select[multiple].hs-input {
+  height: inherit;
+}
+
+input[type="submit"] {
+	background: {{ form_button_background_color }}!important;
+	color: {{ form_button_text_color }}!important;
+	border: none!important;
+}
+
+fieldset {
+	max-width: none!important;
+}
+
+/* Force single column fields to full width inside of fieldsets */
+fieldset.form-columns-1 .hs-input:not([type=radio]):not([type=checkbox]) {
+  width: 100% !important;
+}
+
+input.hs-input.error,
+div.field.error input,
+div.field.error textarea,
+div.field.error .chzn-choices,
+textarea.hs-input.error,
+select.hs-input.error {
+  border-color: {{ danger }};
+}
+input.hs-input.error:focus,
+div.field.error input:focus,
+div.field.error textarea:focus,
+div.field.error .chzn-choices:focus,
+textarea.hs-input.error:focus,
+select.hs-input.error:focus {
+  border-color: {{ danger }};
+}
+
+.actions {
+  padding: 0;
+}
+
+.inputs-list {
+  margin: 0 0 5px;
+  width: 100%;
+  padding-left: 0;
+}
+.inputs-list > li {
+  display: block;
+  padding: 0;
+  width: 100%;
+  padding-top: 0;
+}
+.inputs-list label {
+  display: block;
+  float: none;
+  width: auto;
+  padding: 0;
+  line-height: 18px;
+  text-align: left;
+  white-space: normal;
+  font-weight: normal;
+}
+.inputs-list:first-child {
+  padding-top: 6px;
+}
+.inputs-list > li + li {
+  padding-top: 2px;
+}
+.inputs-list label > input,
+.inputs-list label > span {
+  vertical-align: middle;
+}
+
+ul.no-list {
+  list-style: none;
+}
+
+.field {
+  margin-bottom: 1.25rem;
+}
+
+.hs-field-desc {
+  color: {{ gray }};
+  margin: 0px 0px 6px;
+  font-size: 14px;
+}
+
+.hs-form-required {
+  color: {{ danger }};
+}
+
+.hs-richtext {
+  margin-bottom: 3px;
+  line-height: 1.2;
+  font-size: {{ theme.typography.body_font.size.value }}{{ theme.typography.body_font.size.units }};
+  color: {{ theme.typography.body_font.color }};
+}
+.hs-richtext hr {
+  text-align: left;
+  margin-left: 0;
+  width: 91%;
+}
+
+.grecaptcha-badge {
+  margin: 0 auto;
+}
+
+.email-correction, .email-validation {
+  padding-top: 3px;
+  font-size: 12px;
+}
+.email-correction a,
+.email-validation a {
+  cursor: pointer;
+}
+@media (max-width: 400px),
+(min-device-width: 320px) and (max-device-width: 480px) {
+  .email-correction form .form-columns-2 .hs-form-field,
+  .email-correction form .form-columns-3 .hs-form-field,
+  .email-validation form .form-columns-2 .hs-form-field,
+  .email-validation form .form-columns-3 .hs-form-field {
+    float: none;
+    width: 100%;
+  }
+  .email-correction form .form-columns-2 .hs-form-field .hs-input,
+  .email-correction form .form-columns-3 .hs-form-field .hs-input,
+  .email-validation form .form-columns-2 .hs-form-field .hs-input,
+  .email-validation form .form-columns-3 .hs-form-field .hs-input {
+    width: 90%;
+  }
+  .email-correction form .form-columns-2 .hs-form-field input[type=checkbox],
+  .email-correction form .form-columns-2 .hs-form-field input[type=radio],
+  .email-correction form .form-columns-3 .hs-form-field input[type=checkbox],
+  .email-correction form .form-columns-3 .hs-form-field input[type=radio],
+  .email-validation form .form-columns-2 .hs-form-field input[type=checkbox],
+  .email-validation form .form-columns-2 .hs-form-field input[type=radio],
+  .email-validation form .form-columns-3 .hs-form-field input[type=checkbox],
+  .email-validation form .form-columns-3 .hs-form-field input[type=radio] {
+    width: 24px;
+  }
+}
+
+.hs-button,
+.hs-form-field input[type=text],
+.hs-form-field input[type=email],
+.hs-form-field input[type=phone],
+.hs-form-field input[type=number],
+.hs-form-field input[type=tel],
+.hs-form-field input[type=date],
+.hs-form-field textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.hs-default-font-element,
+.hs-main-font-element {
+}
+
+
+.hubspot-link__container {
+  display: none;
+}
+
+.grecaptcha-badge {
+	margin: 0;
+}
+
+
+
+
+/* ==========================================================================
+   White Form
+   ========================================================================== */
+
+.atmc-form-white .hs-form label {
+	color: #fff;
+}
+.atmc-form-white .hs-error-msgs label {
+  color: {{ warning }};
+}
+
+.atmc-form-white .hs-input,
+.atmc-form-white .hs-search-field__input {
+  box-sizing: border-box;
+	border-radius: 0!important;
+	background-color: rgba(255, 255, 255, 0.1)!important;
+	border: 0!important;
+	border-bottom: 2px solid #fff!important;
+	color: #fff!important;
+}
+
+.atmc-form-white .hs-form input[type="submit"] {
+	background: {{ primary }}!important;
+	color: #fff!important;
+}
+ 
+/* Legal Consent */
+.atmc-form-white .legal-consent-container .hs-richtext * {
+	color: #fff;
+}
+

@@ -1,0 +1,73 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Contact
+    screenshotPath: ../../images/template-previews/contact.jpg
+-->
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<main class="body-container-wrapper">
+
+  {% dnd_area "dnd_area" class='body-container', label='Main section' %}
+
+{% dnd_section 
+		  padding={
+				'top': 0,
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			},
+			full_width=true
+		%}
+      {% dnd_module 'sp_banner' 
+				path='../../modules/Hero Banner 02',
+				label="Hero Banner",
+				width=12
+			%}
+				{% module_attribute 'settings' is_json=True %}
+					{
+						"background_setting":{
+							"parallax": false,
+	            "overlay": true,
+	            "overlay_color": {
+	              "color":"#000",
+	              "opacity": 60
+	            }
+	          }
+					}
+				{% end_module_attribute %}
+				{% module_attribute 'content_02' is_json=True %}
+					{
+						"heading": "Atomic Lite - Contact"
+					}
+				{% end_module_attribute %}
+			{% end_dnd_module %}
+		{% end_dnd_section %}
+
+		{% dnd_section vertical_alignment='TOP' %}
+			{% dnd_column, width=6 %}
+				{% dnd_row %}
+					{% dnd_module 'content_01' path='../../modules/Content', width=12,
+					content='<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque, ligula sed commodo sagittis, lacus quam mattis nisl, ac efficitur nunc sapien et eros. Sed elit massa, pharetra ac semper eget, dapibus eu diam. Donec id nunc nec justo ultrices euismod sed vel leo. Praesent viverra convallis est at maximus. Nunc dolor nulla, pellentesque fermentum suscipit a, mattis ut dui. Aliquam erat massa, molestie in libero in, venenatis fringilla mi. Vestibulum faucibus ipsum et aliquet cursus. Etiam tempus ex non tempor luctus. Nullam sed faucibus tellus, id pretium nunc. Proin non placerat est, ut ullamcorper orci.</p><p>Sint oratio at per, diam saepe dicam ei sea. At civibus appetere cum, quem habeo in. Eam modo apeirian te, ut altera iisque evertitur sit. Cu saperet inermis aliquando nam, per impetus qualisque interesset ex, vix at omittantur instructior disputationi.</p>' 
+					%}
+	        {% end_dnd_module %}
+				{% end_dnd_row %}
+			{% end_dnd_column %}
+
+			{% dnd_column, width=1, offset=6 %}
+	      {% dnd_row %}
+          {% dnd_module path='@hubspot/horizontal_spacer' %}
+  	      {% end_dnd_module %}
+        {% end_dnd_row %}
+	    {% end_dnd_column %}
+
+			{% dnd_module 'form_01' path='../../modules/Form', width=5, offset=7 %}{% end_dnd_module %}
+
+		{% end_dnd_section %}
+
+  {% end_dnd_area %}
+	
+</main>
+{% endblock body %}

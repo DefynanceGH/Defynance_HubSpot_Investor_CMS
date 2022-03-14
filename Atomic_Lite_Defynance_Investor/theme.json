@@ -1,0 +1,16 @@
+{
+  "label" : "Atomic_Lite-Defynacne-Investor-Version",
+  "preview_path" : "./templates/pages/Home.html",
+  "screenshot_path" : "./images/template-previews/home.jpg",
+  "enable_domain_stylesheets" : false,
+  "is_available_for_new_content" : true,
+  "version" : "14",
+  "author" : {
+    "name" : "GiantFocal",
+    "email" : "support@giantfocal.com",
+    "url" : "https://www.giantfocal.com",
+    "source" : "HubSpot Marketplace"
+  },
+  "documentation_url" : "https://www.giantfocal.com/atomic-lite-documentation",
+  "example_url" : "https://demo.giantfocal.com/atomic/lite/page/home"
+}

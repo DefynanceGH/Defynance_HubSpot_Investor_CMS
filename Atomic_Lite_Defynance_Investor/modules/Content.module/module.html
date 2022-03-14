@@ -1,0 +1,79 @@
+<div id="{{ module.custom_id }}" class="atmc-content atmc-content-01 text-{{ module.alignment }} {% if module.enable_style_tab and module.styles.shadow.shadow %}shadow-md{% endif %} {% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {{ module.custom_class }}">
+	{% if module.sub_heading %}
+  	<label class="atmc-cap {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.sub_heading }}</label>
+	{% endif %}
+	{% if module.heading %}
+		{% set headingClass = 'mb-4 atmc-headline-default' %}
+		{% if module.heading_size == 'h1' %}
+			<h1 class="{{ headingClass }} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+				{{ module.heading }}
+			</h1>
+		{% elif module.heading_size == 'h2' %}
+			<h2 class="{{ headingClass }} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+				{{ module.heading }}
+			</h2>
+		{% elif module.heading_size == 'h3' %}
+			<h3 class="{{ headingClass }} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+				{{ module.heading }}
+			</h3>
+		{% elif module.heading_size == 'h4' %}
+			<h4 class="{{ headingClass }} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+				{{ module.heading }}
+			</h4>
+		{% elif module.heading_size == 'h5' %}
+			<h5 class="{{ headingClass }} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+				{{ module.heading }}
+			</h5>
+		{% elif module.heading_size == 'h6' %}
+			<h6 class="{{ headingClass }} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+				{{ module.heading }}
+			</h6>
+		{% endif %}
+	{% endif %}
+	{% if module.intro_content %}
+	  <div class="atmc-intro {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+  	{{ module.intro_content }}
+  	</div>
+	{% endif %}
+	{% if module.content %}
+	  <div class="atmc-content-01_content {% if module.drop_cap %}atmc-dropcap{% endif %} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+	    {{ module.content }}
+	  </div>
+	{% endif %}
+</div>
+
+{% if module.enable_style_tab %}
+	{% require_css %}
+	<style>
+		{% scope_css %}
+			.atmc-content {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }}
+				{{ module.styles.typography.text_alignment.css }}
+			}
+			{% if module.styles.typography.customize_heading_color %}
+			.atmc-content h1,
+			.atmc-content h2,
+			.atmc-content h3,
+			.atmc-content h4,
+			.atmc-content h5,
+			.atmc-content h6 {
+				color: {{ module.styles.typography.heading_color.color }};
+				opacity: {{ module.styles.typography.heading_color.opacity /100 }};
+			}
+			{% endif %}
+			{% if module.styles.typography.customize_text_color %}
+			.atmc-content *:not(a):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+				color: {{ module.styles.typography.text_color.color }};
+				opacity: {{ module.styles.typography.text_color.opacity /100 }};
+			}
+			{% endif %}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %} 
+{% endif %}

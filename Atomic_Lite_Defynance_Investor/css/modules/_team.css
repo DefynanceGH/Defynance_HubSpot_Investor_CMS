@@ -1,0 +1,19 @@
+.atmc-team-01 {
+	grid-row-gap: 2.5rem;
+}
+.atmc-team-01_img {
+	position: relative;
+	display: inline-block;
+	width: 10rem;
+	max-width: 100%;
+	margin: 0 auto 1rem;
+	border-radius: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.atmc-team-01_img:before {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}

@@ -1,0 +1,376 @@
+[ {
+  "id" : "650c078d-f078-4684-a9b5-cbd865a0bba1",
+  "name" : "enable_animation",
+  "display_width" : null,
+  "label" : "Enable Animation",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "00003020-a5dc-02c5-fee8-e888b6d11461",
+  "name" : "animation",
+  "display_width" : null,
+  "label" : "Animation",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "650c078d-f078-4684-a9b5-cbd865a0bba1",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "fadeInLeft", "Fade In Left" ], [ "fadeInTop", "Fade In Top" ], [ "fadeInRight", "Fade In Right" ], [ "fadeInBottom", "Fade In Bottom" ] ],
+  "type" : "choice",
+  "default" : "fadeInBottom"
+}, {
+  "id" : "1019bfc9-74d6-1dfe-69a5-3a84ea611f32",
+  "name" : "settings",
+  "display_width" : null,
+  "label" : "Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "f30ce7ff-0fc3-723b-9c81-36667f20c371",
+    "name" : "background_setting",
+    "display_width" : null,
+    "label" : "Background",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+      "name" : "background_type",
+      "display_width" : null,
+      "label" : "Background Type",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "Search",
+      "choices" : [ [ "solid", "Solid Color" ], [ "image", "Image" ] ],
+      "type" : "choice",
+      "default" : "solid"
+    }, {
+      "id" : "111444f3-eeb1-fac8-3d78-5affc283c654",
+      "name" : "background_image",
+      "display_width" : null,
+      "label" : "Background Image (1920x1080)",
+      "help_text" : "Recommended size: 1920x1080",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "[m]",
+        "operator" : "MATCHES_REGEX",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "responsive" : false,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "src" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Atomic/images/atomic-img-02.jpg",
+        "alt" : "atomic-hero",
+        "width" : 2520,
+        "height" : 1148
+      }
+    }, {
+      "id" : "c10e23f5-bdb3-0f85-3672-158c74685a0e",
+      "name" : "overlay",
+      "display_width" : null,
+      "label" : "Overlay",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "[m]",
+        "operator" : "MATCHES_REGEX",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "f50d0a51-2384-56d0-f50b-d29a8df4d1d2",
+      "name" : "overlay_color",
+      "display_width" : null,
+      "label" : "Overlay Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "[m]",
+        "operator" : "MATCHES_REGEX",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "type" : "color",
+      "default" : {
+        "color" : "#000000",
+        "opacity" : 30
+      }
+    }, {
+      "id" : "2e652aff-0dbf-7f45-f71f-a0ca06c84967",
+      "name" : "parallax",
+      "display_width" : null,
+      "label" : "Parallax",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "image",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "0bf49634-21e8-57aa-94d6-d1ac450f1f2b",
+      "name" : "solid_color",
+      "display_width" : null,
+      "label" : "Solid Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "solid",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "type" : "color",
+      "default" : {
+        "color" : "#4a5278",
+        "opacity" : 100
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "background_type" : "solid",
+      "background_image" : {
+        "src" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Atomic/images/atomic-img-02.jpg",
+        "alt" : "atomic-hero",
+        "width" : 2520,
+        "height" : 1148
+      },
+      "overlay" : false,
+      "overlay_color" : {
+        "color" : "#000000",
+        "opacity" : 30
+      },
+      "parallax" : true,
+      "solid_color" : {
+        "color" : "#4a5278",
+        "opacity" : 100
+      }
+    }
+  }, {
+    "id" : "beeb2c91-071b-65d5-d611-344cd28a9cfd",
+    "name" : "layout",
+    "display_width" : null,
+    "label" : "Layout & Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "f0a0dc35-9f01-d920-0ab8-e319a25ccabf",
+      "name" : "enable_page_center",
+      "display_width" : null,
+      "label" : "Enable Page Center",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "117e601c-c516-85f7-85c8-292422a9e301",
+      "name" : "overwrite_page_center",
+      "display_width" : null,
+      "label" : "Overwrite Page Center",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "f0a0dc35-9f01-d920-0ab8-e319a25ccabf",
+        "controlling_value_regex" : "true",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "84c4ff4d-48f4-6eba-5730-e2afb10e4e8c",
+      "name" : "page_center_size",
+      "display_width" : null,
+      "label" : "Page Center Size (In Pixel)",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "117e601c-c516-85f7-85c8-292422a9e301",
+        "controlling_value_regex" : "true",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "slider",
+      "max" : 2000,
+      "step" : 1,
+      "type" : "number",
+      "default" : 700
+    }, {
+      "id" : "151d8967-54dc-b227-fa25-95eb6e199599",
+      "name" : "custom_id",
+      "display_width" : null,
+      "label" : "Custom ID",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "d566a761-5614-56f8-84b2-cd5687e05968",
+      "name" : "custom_class",
+      "display_width" : null,
+      "label" : "Custom Class",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "enable_page_center" : true,
+      "overwrite_page_center" : false,
+      "page_center_size" : 700
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "background_setting" : {
+      "background_type" : "solid",
+      "background_image" : {
+        "src" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Atomic/images/atomic-img-02.jpg",
+        "alt" : "atomic-hero",
+        "width" : 2520,
+        "height" : 1148
+      },
+      "overlay" : false,
+      "overlay_color" : {
+        "color" : "#000000",
+        "opacity" : 30
+      },
+      "parallax" : true,
+      "solid_color" : {
+        "color" : "#4a5278",
+        "opacity" : 100
+      }
+    },
+    "layout" : {
+      "enable_page_center" : true,
+      "overwrite_page_center" : false,
+      "page_center_size" : 700
+    }
+  }
+}, {
+  "id" : "435865a5-5323-2d3b-daa6-59b1af55dc85",
+  "name" : "content_02",
+  "display_width" : null,
+  "label" : "Content 02",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "9db4fe86-30ba-564a-8495-377890affdcd",
+    "name" : "alignment",
+    "display_width" : null,
+    "label" : "Alignment",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "placeholder" : "Search",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "type" : "choice",
+    "default" : "left"
+  }, {
+    "id" : "a42ff607-87ed-d332-c940-1a1e27873563",
+    "name" : "text_white",
+    "display_width" : null,
+    "label" : "Text White",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "1fb425b3-5187-bef7-f8ef-cd65ab21568f",
+    "name" : "heading",
+    "display_width" : null,
+    "label" : "Heading",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Atomic Hero"
+  }, {
+    "id" : "6c22f34b-3594-60d0-6b55-4ae92a3971dc",
+    "name" : "heading_size",
+    "display_width" : null,
+    "label" : "Heading Size",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "placeholder" : "Search",
+    "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ] ],
+    "type" : "choice",
+    "default" : "h1"
+  }, {
+    "id" : "5c04d1d5-5df8-d15b-a114-87f3718e2ebe",
+    "name" : "description_text",
+    "display_width" : null,
+    "label" : "Description Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in mi at felis mattis suscipit at in justo. Ut varius tristique faucibus."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "alignment" : "left",
+    "text_white" : true,
+    "heading" : "Atomic Hero",
+    "heading_size" : "h1",
+    "description_text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in mi at felis mattis suscipit at in justo. Ut varius tristique faucibus."
+  }
+}, {
+  "id" : "c2b772c7-6ca6-5bec-f246-7f20a0613570",
+  "name" : "scroll_to_color",
+  "display_width" : null,
+  "label" : "Scroll To Color",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "dark", "Dark" ], [ "white", "White" ] ],
+  "type" : "choice",
+  "default" : "white"
+} ]

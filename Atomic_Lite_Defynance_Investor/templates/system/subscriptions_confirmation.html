@@ -1,0 +1,16 @@
+<!--
+    templateType: email_subscriptions_confirmation_page
+    isAvailableForNewContent: true
+    label: Subscription Confirmation
+    screenshotPath: ../../images/template-previews/email-confirmation.jpeg
+-->
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<div class="dnd-section">
+  <div class="atmc-container atmc-container-xs">
+    {% module "subscriptions_confirmation" path="@hubspot/email_subscriptions_confirmation" %}
+  </div>
+</div>
+{% endblock body %}

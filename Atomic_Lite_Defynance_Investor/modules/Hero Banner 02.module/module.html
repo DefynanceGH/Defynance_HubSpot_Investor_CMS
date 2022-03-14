@@ -1,0 +1,42 @@
+<div id="{{ module.settings.layout.custom_id }}" class="atmc-hero-02 atmc-hero text-{{ module.alignment }} {{ name }} {% if module.settings.background_setting.background_type == 'image' && module.settings.background_setting.parallax %}atmc-parallax{% endif %} {% if module.settings.background_setting.background_type == 'image' and module.settings.background_setting.overlay %}atmc-overlay{% endif %} {{ module.settings.layout.custom_class }}" 
+	{% if module.settings.background_setting.background_type == 'solid' %}style="background-color:{{ module.settings.background_setting.solid_color.color }};"
+	{% elif module.settings.background_setting.background_type == 'image' %}style="background-image:url('{{ module.settings.background_setting.background_image.src }}');"
+	{% endif %}>
+  <div class="{% if module.settings.layout.enable_page_center %}atmc-container{% endif %}">
+    <div class="row-fluid">
+      <div class="span12 text-{{ module.content_02.alignment }} {% if module.content_02.text_white %}text-white{% endif %}">
+        {% if module.content_02.heading %}
+          {% if module.content_02.heading_size == 'h1' %}
+            <h1 class="atmc-hero-02_heading {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.content_02.heading }}</h1>
+          {% elif module.content_02.heading_size == 'h2' %}
+            <h2 class="atmc-hero-02_heading {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.content_02.heading }}</h2>
+          {% endif %}
+        {% endif %}
+        {% if module.content_02.description_text %}
+	        <p class="{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.content_02.description_text }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{# =============== CSS Styling =============== #}
+{% require_css %}
+  <style>
+    {# Image overlay #}
+    {% if module.settings.background_setting.overlay and module.settings.background_setting.background_type == 'image' %}
+      .{{ name }}:before {
+        background: {{ module.settings.background_setting.overlay_color.color }};
+        opacity: {{ module.settings.background_setting.overlay_color.opacity/100 }};
+      }
+		{% endif %}
+    {# Overwrite page center size #}
+    {% if module.settings.layout.overwrite_page_center %}
+      .{{ name }} .atmc-container {
+        max-width: {{ module.settings.layout.page_center_size }}px;
+      }
+    {% endif %}
+    
+  </style>
+{% end_require_css %}
+{# =============== /CSS Styling =============== #}

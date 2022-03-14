@@ -1,0 +1,9 @@
+{
+  "global" : true,
+  "smart_type" : "NOT_SMART",
+  "icon" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Atomic/icons/header.svg",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 67161037685,
+  "label" : "Atomic - Header",
+  "is_available_for_new_content" : true
+}

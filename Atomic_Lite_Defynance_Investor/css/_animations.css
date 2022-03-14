@@ -1,0 +1,21 @@
+.atmc-hover-scaleup:hover {
+  transform: scale(1.1);
+}
+.atmc-hover-scaledown:hover {
+  transform: scale(.95);
+}
+.atmc-hover-translateY:hover {
+  transform: translateY(-.27rem);
+}
+
+/* Disable animations in page editor */
+body.hubspot-disable-focus-styles .sr-invisible {
+	visibility: visible!important;
+}
+
+/* SR Animation */
+{% if theme.components_group.animation_toggle == 'true' %}
+	.sr-invisible {
+		visibility: hidden;
+	}
+{% endif %}

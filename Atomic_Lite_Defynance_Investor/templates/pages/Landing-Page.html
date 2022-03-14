@@ -1,0 +1,66 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Landing Page
+    screenshotPath: ../../images/template-previews/landing-page.jpg
+-->
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+	<main class="body-container-wrapper">
+		{% dnd_area "dnd_area" class='body-container', label='Main section' %}
+	 
+			{% dnd_section %}
+				{% dnd_column, width=5 %}
+		      {% dnd_row %}
+						{% dnd_module 'lp_image' 
+							path='../../modules/Image',
+							variant='default',
+							image={
+								'src': 'https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Atomic/images/atomic-ebook.png'
+							}
+						%}
+						{% end_dnd_module %}
+		      {% end_dnd_row %}
+				{% end_dnd_column %}
+		    {% dnd_module path='@hubspot/horizontal_spacer', width=1, offset=5 %}{% end_dnd_module %}
+				{% dnd_column, width=6, offset=6 %}
+					{% dnd_row %}
+						{% dnd_module 'lp_heading' 
+							path='../../modules/Content',
+							sub_heading='',
+							heading='Atomic Content',
+							alignment='left',
+							intro_content='',
+							content='Sint oratio at per, diam saepe dicam ei sea. At civibus appetere cum, quem habeo cum in. Eam modo apeirian te, ut altera iisque evertitur sit. Cu saperet inermis aliquando nam, per impetus qualisque interesset ex, vix at omittantur instructior disputationi.',
+							heading_size='h1'
+						%}
+						{% end_dnd_module %}
+					{% end_dnd_row %}
+		      
+		      {% dnd_row %}
+            {% dnd_module 'lp_social' 
+							path='../../modules/Social',
+							width=1,
+							offset=11,
+							direction='row',
+							custom_class='mb-8'
+						%}
+						{% end_dnd_module %}
+          {% end_dnd_row %}
+		      
+		      {% dnd_row %}
+						{% dnd_module 'lp_form' 
+							path='../../modules/Form',
+							form_footer=''
+						%}
+						{% end_dnd_module %}
+					{% end_dnd_row %}
+				{% end_dnd_column %}
+			{% end_dnd_section %}
+
+		
+    {% end_dnd_area %}
+	</main>
+{% endblock body %}

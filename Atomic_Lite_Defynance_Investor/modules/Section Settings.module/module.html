@@ -1,0 +1,13 @@
+{% if module.overlay %}
+	<div class="atmc-overlay-module {{ name }}-overlay"></div>
+
+	{% require_css %}
+	<style>
+		.{{ name }}-overlay {
+			background-color: {{ module.overlay_settings.color.color }};
+			opacity: {{ module.overlay_settings.color.opacity / 100 }};
+		}
+	</style>
+	{% end_require_css %}
+
+{% endif %}

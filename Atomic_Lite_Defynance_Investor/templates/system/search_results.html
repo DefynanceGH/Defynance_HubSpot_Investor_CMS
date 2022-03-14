@@ -1,0 +1,17 @@
+<!--
+    templateType: search_results_page
+    isAvailableForNewContent: true
+    label: Search Result
+    screenshotPath: ../../images/template-previews/search.jpeg
+-->
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<div class="dnd-section">
+  <div class="atmc-container atmc-container-small">
+    <h1>Results for <span class="atmc-headline-04">{{ request.query_dict.term|escape }}</span></h1>
+    {% module "search_results" path="@hubspot/search_results" %}
+  </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,75 @@
+<div id="{{ module.custom_id }}" class="atmc-gallery {% if module.enable_style_tab and module.styles.shadow.shadow %}shadow-md{% endif %}">
+
+		<div class="atmc-gallery-01 atmc-grid atmc-grid-{{ module.items_per_row }}col {% if !module.enable_style_tab %}text-{{ module.alignment }}{% endif %} {% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {{ name|replace('-','_') }} {{ module.custom_class }}">
+			{% for item in module.gallery_repeater %}
+				<div class="atmc-grid-col">
+					{% if item.image.src %}
+						{% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+						{% if item.image.size_type == 'auto' %}
+							{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+						{% elif item.image.size_type == 'auto_custom_max' %}
+							{% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.image.max_width }}px; max-height: {{ item.image.max_height }}px"' %}
+						{% endif %}
+						<div class="atmc-gallery-01_img rounded" style="background-image:url('{{ item.image.src }}');">
+							<img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ sizeAttrs }}>
+						</div>
+					{% endif %}
+					{% if item.title %}
+						<h4>{% if item.cta_url.href %}<a href="{{ item.cta_url.href }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h4>
+					{% endif %}
+					{% if item.description %}
+						<p>{{ item.description }}</p>
+					{% endif %}
+					{% if item.cta_text && item.cta_url.href %}
+						<p>
+							<a href="{{ item.cta_url.href }}" class="atmc-btn atmc-btn-primary">{{ item.cta_text }}</a>
+						</p>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+</div>
+
+{% if module.enable_style_tab %}
+	{% require_css %}
+	<style>
+		{% scope_css %}
+			.atmc-gallery {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }}
+				{{ module.styles.typography.text_alignment.css }}
+			}
+			{% if module.styles.typography.customize_heading_color %}
+			.atmc-gallery h1,
+			.atmc-gallery h2,
+			.atmc-gallery h3,
+			.atmc-gallery h4,
+			.atmc-gallery h5,
+			.atmc-gallery h6 {
+				color: {{ module.styles.typography.heading_color.color }};
+				opacity: {{ module.styles.typography.heading_color.opacity /100 }};
+			}
+			.atmc-gallery h1 a,
+			.atmc-gallery h2 a,
+			.atmc-gallery h3 a,
+			.atmc-gallery h4 a,
+			.atmc-gallery h5 a,
+			.atmc-gallery h6 a {
+				color: inherit;
+			}
+			{% endif %}
+			{% if module.styles.typography.customize_text_color %}
+			.atmc-gallery *:not(a):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+				color: {{ module.styles.typography.text_color.color }};
+				opacity: {{ module.styles.typography.text_color.opacity /100 }};
+			}
+			{% endif %}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %}
+{% endif %}

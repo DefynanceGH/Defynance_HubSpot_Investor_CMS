@@ -1,0 +1,45 @@
+<div id="{{ module.custom_id }}" class="atmc-headline {% if !module.enable_style_tab %}text-{{ module.alignment }}{% endif %} {{ module.custom_class }}">
+		{% if module.heading_size == 'h1' %}
+				<h1 class="{% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.heading }}</h1>
+		{% elif module.heading_size == 'h2' %}
+				<h2 class="{% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.heading }}</h2>
+		{% elif module.heading_size == 'h3' %}
+				<h3 class="{% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.heading }}</h3>
+		{% elif module.heading_size == 'h4' %}
+				<h4 class="{% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.heading }}</h4>
+		{% elif module.heading_size == 'h5' %}
+				<h5 class="{% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.heading }}</h5>
+		{% elif module.heading_size == 'h6' %}
+				<h6 class="{% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.heading }}</h6>
+		{% endif %}	
+</div>
+
+{% if module.enable_style_tab %}
+	{% require_css %}
+	<style>
+		{% scope_css %}
+			.atmc-headline {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }}
+				{{ module.styles.typography.text_alignment.css }}
+			}
+			{% if module.styles.typography.customize_heading_color %}
+			.atmc-headline h1,
+			.atmc-headline h2,
+			.atmc-headline h3,
+			.atmc-headline h4,
+			.atmc-headline h5,
+			.atmc-headline h6 {
+				color: {{ module.styles.typography.heading_color.color }};
+				opacity: {{ module.styles.typography.heading_color.opacity /100 }};
+			}
+			{% endif %}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %}
+{% endif %}

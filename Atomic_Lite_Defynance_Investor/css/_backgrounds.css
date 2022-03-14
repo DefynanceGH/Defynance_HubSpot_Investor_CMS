@@ -1,0 +1,12 @@
+.bg-gradient {
+	background: linear-gradient(210.53deg, {{ dark }} 0%, {{ primary }} 100%), {{ primary }};
+}
+
+/* Hero */
+.atmc-hero {
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: 6rem 0;
+}

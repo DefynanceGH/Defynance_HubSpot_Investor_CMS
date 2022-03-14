@@ -1,0 +1,30 @@
+<div id="{{ module.custom_id }}" class="atmc-icon-06 {% if module.enable_style_tab and module.styles.shadow.shadow %}shadow-md{% endif %} {% if !module.enable_style_tab %}text-{{ module.alignment }}{% endif %} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %} {{ module.custom_class }}">
+	<div class="fill-{{ module.color_option }} bg-white shadow-md inline-flex items-center justify-center rounded-full p-4">
+		{% icon name="{{ module.icon.name }}" style="{{ module.icon.type }}" unicode="{{ module.icon.unicode }}", no_warpper=true %}
+	</div>
+</div>
+
+{% if module.enable_style_tab %}
+	{% require_css %}
+	<style>
+		{% scope_css %}
+			.atmc-icon-06 {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }}
+				{{ module.styles.typography.text_alignment.css }}
+			}
+			{% if module.styles.typography.customize_text_color %}
+				.atmc-icon-06 svg {
+					fill: {{ module.styles.typography.text_color.color }};
+					opacity: {{ module.styles.typography.text_color.opacity /100 }};
+				}
+			{% endif %}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %}
+{% endif %}

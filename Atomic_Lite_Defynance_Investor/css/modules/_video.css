@@ -1,0 +1,43 @@
+.atmc-video-03 {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 50vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.atmc-video-03:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--dark);
+	opacity: 0.85;
+	z-index: 1;
+	transition: 0.3s ease;
+}
+.atmc-video-03:hover:before {
+	opacity: 0.5;
+}
+.atmc-video-03 .atmc-container {
+	position: initial;
+	z-index: 2;
+}
+.atmc-video-03_button {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 8rem;
+	height: 8rem;
+	z-index: 3;
+}
+.atmc-video-03_button svg {
+	height: 2rem;
+}
+

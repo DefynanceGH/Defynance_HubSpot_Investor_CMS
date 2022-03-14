@@ -1,0 +1,71 @@
+<div id="{{ module.custom_id }}" class="atmc-social-links-01 {% if !module.enable_style_tab %}text-{{ module.alignment }}{% endif %} {{ name }} {% if module.enable_style_tab and module.styles.shadow.shadow %}shadow-md{% endif %} {{ module.custom_class }}">
+	
+	<div class="inline-flex items-center ds:flex-{{ module.direction }}">
+		
+		{% if module.link_option == 'links' %}
+			{% for item in module.social_links %}
+				<div class="atmc-social-01-wrapper {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+					<a href="{{ item.url.href }}" target="_blank" class="atmc-social atmc-social-{{ module.variant|replace('var_', '') }} bg-{{ module.background_color }} {% if !module.enable_style_tab %}{% if module.color_white %}fill-white{% else %}fill-primary{% endif %}{% endif %} atmc-hover-translateY">
+						{% icon	name="{{ item.icon.name }}"	style="{{ item.icon.type }}"	unicode="{{ item.icon.unicode }}", no_wrapper=true %}
+					</a>
+				</div>
+			{% endfor %}
+		{% elif module.link_option == 'share' %}
+			{% if module.share.facebook %}
+				<div class="atmc-social-01-wrapper {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+					<a class="atmc-social atmc-social-{{ module.variant|replace('var_', '') }} bg-{{ module.background_color }} {% if module.color_white %}fill-white{% else %}fill-primary{% endif %} {% if module.brand_colors %}atmc-social-facebook{% endif %} atmc-hover-translateY" href="https://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url }}" target="_blank">
+						{% icon	name="facebook-f" style="regular"	unicode="f39e", no_wrapper=true %}
+					</a>
+				</div>
+			{% endif %}
+			{% if module.share.twitter %}
+				<div class="atmc-social-01-wrapper {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+					<a class="atmc-social atmc-social-{{ module.variant|replace('var_', '') }} bg-{{ module.background_color }} {% if module.color_white %}fill-white{% else %}fill-primary{% endif %} {% if module.brand_colors %}atmc-social-twitter{% endif %} atmc-hover-translateY" href="https://twitter.com/intent/tweet?url=&text={{ content.absolute_url }}" target="_blank">
+						{% icon	name="twitter"style="regular" unicode="f099", no_wrapper=true %}
+					</a>
+				</div>
+			{% endif %}
+			{% if module.share.pinterest %}
+				<div class="atmc-social-01-wrapper {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+					<a class="atmc-social atmc-social-{{ module.variant|replace('var_', '') }} bg-{{ module.background_color }} {% if module.color_white %}fill-white{% else %}fill-primary{% endif %} {% if module.brand_colors %}atmc-social-pinterest{% endif %} atmc-hover-translateY" href="https://pinterest.com/pin/create/button/?url={{ content.absolute_url }}" target="_blank">
+						{% icon	name="pinterest"	style="regular" unicode="f0d2", no_wrapper=true %}
+					</a>
+				</div>
+			{% endif %}
+			{% if module.share.linkedin %}
+				<div class="atmc-social-01-wrapper {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+					<a class="atmc-social atmc-social-{{ module.variant|replace('var_', '') }} bg-{{ module.background_color }} {% if module.color_white %}fill-white{% else %}fill-primary{% endif %} {% if module.brand_colors %}atmc-social-linkedin{% endif %} atmc-hover-translateY" href="https://www.linkedin.com/shareArticle?mini=true&url={{ content.absolute_url }}" target="_blank">
+						{% icon	name="linkedin-in" style="regular" unicode="f0e1", no_wrapper=true %}
+					</a>
+				</div>
+			{% endif %}
+		{% endif %}
+		
+	</div>
+	
+</div>
+
+{% if module.enable_style_tab %}
+	{% require_css %}
+	<style>
+		{% scope_css %}
+			.atmc-social-links-01 {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }}
+				{{ module.styles.typography.text_alignment.css }}
+			}
+			{% if module.styles.typography.customize_text_color %}
+			.atmc-social-links-01 .atmc-social-01-wrapper svg {
+				fill: {{ module.styles.typography.text_color.color }};
+				opacity: {{ module.styles.typography.text_color.opacity /100 }};
+			}
+			{% endif %}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %} 
+{% endif %}

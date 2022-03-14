@@ -1,0 +1,58 @@
+{% if module.blog_settings.type_of_posts == 'recent' %}
+  {% set atmc_blog_posts = blog_recent_posts(module.blog_settings.blog, module.blog_settings.number_of_posts) %}
+{% elif module.blog_settings.type_of_posts == 'popular' %}
+  {% set atmc_blog_posts = blog_popular_posts(module.blog_settings.blog, module.blog_settings.number_of_posts) %}
+{% else %}
+  {% set atmc_blog_posts = blog_recent_tag_posts(module.blog_settings.blog, [module.blog_settings.tag], module.blog_settings.number_of_posts) %}
+{% endif %}
+
+<div id="{{ module.custom_id }}" class="atmc-blog-01 {% if module.enable_style_tab and module.styles.shadow.shadow %}shadow-md{% endif %} {% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {% if !module.enable_style_tab %}text-{{ module.alignment }}{% endif %} {% if module.blog_settings.layout == 'slider' %}{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}{% endif %} {{ name }} {{ module.custom_class }}">
+	<div class="atmc-blog-01_repeater {% if module.blog_settings.layout == 'grid' %}atmc-grid atmc-grid-{{ module.blog_settings.items_per_row }}col{% else %}atmc-slider{% endif %}"
+			 {% if module.blog_settings.layout == 'slider' %}
+			 data-slider-item="{{ module.blog_settings.items_per_row }}" 
+			 data-slider-arrows="{% if module.slider_settings.arrows %}true{% else %}false{% endif %}"
+			 data-slider-dots="{% if module.slider_settings.dots %}true{% else %}false{% endif %}"
+			 data-slider-autoplay="{% if module.slider_settings.autoplay %}true{% else %}false{% endif %}"
+			 data-slider-autoplayspeed="{{ module.slider_settings.autoplay_speed }}"
+			 data-slider-infinite="{% if module.slider_settings.infinite %}true{% else %}false{% endif %}"
+			 {% endif %}>
+		{% for atmc_blog_post in atmc_blog_posts %}
+		<a class="atmc-blog-01_box atmc-grid-col text-default {% if module.text_white %}text-white{% endif %}" href="{{ atmc_blog_post.absolute_url }}">
+			<div class="{% if module.blog_settings.layout != 'slider' %}{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}{% endif %}">
+				{% if atmc_blog_post.featured_image %}
+				<div class="atmc-blog-01_img_wrapper overflow-hidden shadow-md rounded atmc-ratio-16-9">
+					<div class="atmc-blog-01_img atmc-hover-scaleup" style="background-image:url('{{ atmc_blog_post.featured_image }}');"></div>
+					<p class="atmc-blog-01_info bg-primary"><span class="atmc-blog-01_date">{{ atmc_blog_post.publish_date|datetimeformat('%d') }}</span><span class="atmc-blog-01_month">{{ atmc_blog_post.publish_date|datetimeformat('%b') }}</span></p>
+				</div>
+				{% endif %}
+				<p class="atmc-h4">{{ atmc_blog_post.name }}</p>
+			</div>
+		</a>
+		{% endfor %}
+	</div>
+</div> 
+ 
+{% if module.enable_style_tab %}
+	{% require_css %}
+	<style>
+		{% scope_css %}
+			.atmc-blog-01 {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }}
+				{{ module.styles.typography.text_alignment.css }}
+			}
+			{% if module.styles.typography.customize_text_color %}
+			.atmc-blog-01 *:not(a):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+				color: {{ module.styles.typography.text_color.color }};
+				opacity: {{ module.styles.typography.text_color.opacity /100 }};
+			}
+			{% endif %}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %}
+{% endif %}

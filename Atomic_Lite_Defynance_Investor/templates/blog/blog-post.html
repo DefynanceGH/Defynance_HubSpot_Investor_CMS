@@ -1,0 +1,100 @@
+<!--
+templateType: blog_post
+label: Blog Post
+isAvailableForNewContent: true
+screenshotPath: ../../images/template-previews/blog-post.jpg
+-->
+ 
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<div class="atmc-blog-template-01">
+	
+	<div class="dnd-section">
+		<div class="atmc-container atmc-container-xs">
+			
+      <!-- Post Header -->
+			<div class="mb-12">
+				<h1>{{ content.name }}</h1>
+				<div class="atmc-blog-post_meta atmc-cap mb-6">
+					{% if content.blog_post_author.slug %}
+						<a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}">
+							{{ content.blog_post_author.display_name }}
+						</a>
+					{% endif %}
+					<div class="atmc-blog-psot_timestamp">
+						{{ content.publish_date_localized }}
+					</div>
+				</div>
+				<div class="atmc-blog-post_intro atmc-intro mb-8">
+					{% rich_text "intro" label="Post Introduction" html='No quod sanctus instructior ius, et intellegam interesset duo. Vix cu nibh gubergren dissentias. His velit veniam habemus ne. No doctus neglegentur vituperatoribus est, qui ad ipsum oratio. Ei duo dicant facilisi, qui at harum democritum consetetur.', no_wrapper=True %}
+				</div>
+			</div>
+		</div>
+		
+			
+		<div class="atmc-container atmc-container-s">
+      <!-- Post Image -->
+			<div class="atmc-blog-post_image mb-12">
+				<img src="{{ content.featured_image }}" class="rounded shadow-md" width="100%" height="auto" alt="{{ content.featured_image_alt_text }}" />
+			</div>
+		</div>
+		
+			
+		<div class="atmc-container atmc-container-xs">
+      <!-- Post Body -->
+			<div class="atmc-blog-post">
+			  {% module "blog-share" path='../../modules/Social', label="Atomic Social 01", no_wrapper=true %}
+				
+				<div class="atmc-blog-post_body mt-8">
+					{{ content.post_body }}
+				</div>
+				{% if content.tag_list %}
+				<div class="atmc-blog-post_tags my-8">
+					{% for tag in content.tag_list %}
+  					<a class="atmc-blog-post_tag-link" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+					{% endfor %}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	
+	{% if group.allow_comments %}
+	<div class="dnd-section bg-light">
+		<div class="atmc-container atmc-container-xs">
+			<h2 class="mb-8">
+				Leave a Comment
+			</h2>
+			<div class="atmc-blog-comments">
+				{% module "blog_comments" path="@hubspot/blog_comments", label="Blog Comments" %}
+			</div>
+		</div>
+	</div>
+  {% endif %}
+	
+	{# This macro is used to format each recent post card and
+		gets passed to the 'related_blog_posts' tag below #}
+	{% macro recent_post(post) %}
+		<a href="{{ post.absolute_url }}" class="atmc-blog-recent-posts_post atmc-grid-col">
+			<label class="atmc-cap">{{ post.publish_date_localized }}</label>
+			<h3 class="atmc-blog-recent-posts_title atmc-h4">{{ post.title }}</h3>
+		</a>
+	{% endmacro %}
+
+	
+	<div class="dnd-section {% if group.allow_comments %}{% else %}bg-light{% endif %}">
+		<div class="atmc-container atmc-container-s">
+			<div class="atmc-blog-recent-posts">
+				<div class="atmc-content-wrapper">
+					<h2 class="mb-8">Related Posts</h2>
+					<div class="atmc-blog-recent-posts_list atmc-grid atmc-grid-3col">
+						{% related_blog_posts limit=3, post_formatter="recent_post", no_wrapper=True %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+</div>
+{% endblock body %}

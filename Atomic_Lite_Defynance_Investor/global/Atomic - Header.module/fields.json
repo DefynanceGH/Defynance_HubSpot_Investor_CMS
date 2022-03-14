@@ -1,0 +1,64 @@
+[ {
+  "id" : "82feda0b-9629-152b-7c0d-2b980d24b45a",
+  "name" : "logo_dark",
+  "display_width" : null,
+  "label" : "Logo Dark",
+  "required" : false,
+  "locked" : true,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto_custom_max",
+    "src" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Atomic/logos/atomic-lite.svg",
+    "alt" : "atomic-lite",
+    "width" : 58,
+    "height" : 58,
+    "max_width" : 60,
+    "max_height" : 60
+  }
+}, {
+  "id" : "466eb585-f8f0-d7dd-5a58-4c1b9a726f6e",
+  "name" : "logo_white",
+  "display_width" : null,
+  "label" : "Logo White",
+  "required" : false,
+  "locked" : true,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto_custom_max",
+    "src" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Atomic/logos/atomic-lite.svg",
+    "alt" : "atomic-lite",
+    "width" : 58,
+    "height" : 58,
+    "max_width" : 60,
+    "max_height" : 60
+  }
+}, {
+  "id" : "ec3e409c-8444-d400-bb8b-a43491a1e37e",
+  "name" : "menu",
+  "display_width" : null,
+  "label" : "Menu",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu",
+  "default" : 30099042698
+}, {
+  "id" : "3a78b4ee-8645-c654-519e-879fafa9b2ba",
+  "name" : "url",
+  "display_width" : null,
+  "label" : "URL",
+  "required" : false,
+  "locked" : true,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+  "type" : "url",
+  "default" : {
+    "type" : "EXTERNAL",
+    "href" : "https://demo.giantfocal.com/atomic/lite/page/home",
+    "content_id" : null
+  }
+} ]

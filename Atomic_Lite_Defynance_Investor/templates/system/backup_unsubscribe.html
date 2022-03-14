@@ -1,0 +1,16 @@
+<!--
+    templateType: email_backup_unsubscribe_page
+    isAvailableForNewContent: true
+    label: Backup Unscubscribe
+    screenshotPath: ../../images/template-previews/backup_unsubscribe.jpeg
+-->
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<div class="dnd-section">
+  <div class="atmc-container atmc-container-xs">
+    {% module "backup_unsubscribe" path="@hubspot/email_simple_subscription", css='false', no_wrapper=True %}
+  </div>
+</div>
+{% endblock body %}

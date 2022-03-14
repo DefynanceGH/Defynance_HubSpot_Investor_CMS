@@ -1,0 +1,27 @@
+<div id="{{ module.custom_id }}" class="atmc-video {{ module.custom_class }}">
+	<a href="#{{ name }}_popup" class="atmc-video-03 atmc-popup text-{{ module.alignment }} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %} {{ name }}" style="background-image:url('{{ module.background_image.src }}');">
+		<div class="atmc-container">
+			<div class="atmc-video-03_button rounded flex items-center justify-center fill-white border border-white">{% icon	name="{{ module.icon.name }}"	style="{{ module.icon.type }}"	unicode="{{ module.icon.unicode }}", no_wrapper=true %}</div>
+		</div>
+	</a>
+</div>
+
+<div id="{{ name }}_popup" class="atmc-video-03_popup white-popup mfp-hide">{{ module.video_embed }}</div>
+
+{% if module.enable_style_tab %}
+	{% require_css %} 
+	<style>
+		{% scope_css %}
+			.atmc-video {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }} 
+			}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %}  
+{% endif %}

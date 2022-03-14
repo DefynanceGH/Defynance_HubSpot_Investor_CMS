@@ -1,0 +1,81 @@
+<!--
+    templateType: global_partial
+    isAvailableForNewContent: false
+    label: Page header
+-->
+
+<a href="#main-content" class="header_skip">Skip to content</a>
+
+
+{% if theme.header_group.header_option == 'draganddrop' %}
+
+  {% dnd_area 'header-global' label='Header' %}
+
+    {% dnd_section vertical_alignment="MIDDLE"
+			padding={
+				"top": 20,
+				"bottom": 20
+			} %}
+    {% end_dnd_section %}
+  {% end_dnd_area %}
+
+{% else %}
+
+	<header class="atmc-header atmc-header-{{ header_class }} {% if theme.header_group.header_text_white %}atmc-header-white{% endif %}">
+		<div class="atmc-header_container">
+
+			<!-- Logo -->
+			{% module "header-logo" path='../../global/Atomic - Header', label="Header - Logo", no_wrapper=true %}
+
+			{% if widget_data.header.value != 'Landing' %}
+
+			<!-- Menu -->
+			<div class="atmc-header_menu-wrapper">
+				<div class="atmc-header_navigation">
+					{% module "header-menu" path='../../global/Atomic - Header', label="Header - Menu", no_wrapper=true %}
+				</div>
+			</div>
+
+			{% endif %}
+
+			<div class="atmc-header_right">
+				<!-- Language Switcher -->
+				{% if content.translated_content|length %}
+				<div class="atmc-header_language-switcher">
+					<div class="atmc-header_language-switcher-label">
+						{% module "language-switcher" path="@hubspot/language_switcher", display_mode='localized', label="Language Switcher" %}
+						<div class="atmc-header_language-switcher-label-current"> {{ locale_name(locale) }}</div>
+					</div>
+				</div>
+				{% endif %}
+
+				{% if widget_data.header.value != 'Landing' %}
+
+				<!-- Search -->
+				<div class="atmc-header-01_search_trigger">
+					{% icon name="search" style="SOLID" unicode="f002", no_wrapper=true %}
+				</div>
+				<div class="atmc-header-01_search">
+					<div>
+						<div class="atmc-header-01_search_top block text-right">
+							<div class="atmc-header-01_search_close">
+								<div class="hamburger hamburger--slider js-hamburger is-active">
+									<div class="hamburger-box">
+										<div class="hamburger-inner"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						{% module "site_search" path="@hubspot/search_input", label="Search..." %}
+					</div>
+				</div>
+
+				{% endif %}
+
+			</div>
+
+
+		</div>
+	</header>
+
+{% endif %}

@@ -1,0 +1,57 @@
+<!--
+templateType: blog_listing
+label: Blog Listing
+isAvailableForNewContent: true
+screenshotPath: ../../images/template-previews/blog-index.jpg
+-->
+
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<div class="atmc-blog-template-01">
+	
+  {% dnd_area 'dnd_area'
+    label='Main section',
+    class='body-container body-container--blog-index'
+  %}
+
+    {# Blog Banner #}
+    {% dnd_section
+      background_color='#f9f9f9',
+      padding={
+          'top': 48,
+          'bottom': 48
+      }
+    %}
+      {% dnd_column width=6 %}
+        {% dnd_row %}
+          {% dnd_module path='../../modules/blog/Blog Listing' variant="blog-heading" %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+    {# End Blog Banner #}
+
+    {# Blog Listings and Pagination #}
+    {% dnd_section
+      vertical_alignment='TOP'
+    %}
+      {% dnd_column %}
+        {% dnd_row %}
+          {% dnd_module path='../../modules/blog/Blog Listing' variant="listing" %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module path='../../modules/blog/Blog Listing' variant="pagination" %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+    {# End Blog Listings and Pagination #}
+
+  {% end_dnd_area %}
+	
+	
+</div>
+{% endblock body %}

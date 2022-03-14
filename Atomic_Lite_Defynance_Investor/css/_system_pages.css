@@ -1,0 +1,77 @@
+/* Password */
+.widget-type-password_prompt input[type="password"] {
+	margin-top: 0!important;
+	margin-bottom: 1rem;
+}
+
+
+
+/* Search Results */
+
+.hs-search-results {
+  margin-top: 2rem;
+}
+ul.hs-search-results__listing li {
+  margin-bottom: 2rem;
+}
+.hs-search-results__title {
+  font-family: {{ theme.typography.heading_font.font }};
+  font-size: 1.25rem;
+  color: {{ theme.typography.body_font.color }};
+  text-decoration: underline;
+  margin-bottom: .25rem;
+}
+.hs-search-results__title:hover {
+  color: {{ theme.typography.body_font.color }};
+  text-decoration: none;
+}
+.hs-search-results__description {
+  padding-top: .5rem;
+}
+.hs-search-highlight {
+  font-weight: bold;
+}
+.hs-search-results__pagination a {
+  color: {{ theme.typography.body_font.color }};
+}
+
+/* Backup Unsubscribe */
+#email-prefs-form input[type="email"] {
+	padding: 1rem 1.5rem!important;
+	margin-top: 1rem;
+}
+
+
+/* Subscription Preferences */
+
+.email-prefs {
+	
+}
+.email-prefs .item + .item {
+	margin-top: 1rem;
+}
+
+.email-prefs .item-inner > p {
+	opacity: .8;
+}
+.email-prefs .checkbox-row {
+	font-weight: bold;
+}
+.email-prefs .item .fakelabel span {
+	margin-right: .25rem;
+}
+
+.subscribe-options {
+	margin: 1rem 0;
+}
+.subscribe-options .header {
+	margin: 0;
+}
+.subscribe-options label {
+	display: flex;
+	align-items: center;
+}
+.checkbox-row > span {
+	display: flex;
+	align-items: center;
+}

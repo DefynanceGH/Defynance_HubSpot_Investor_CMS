@@ -1,0 +1,74 @@
+<div id="{{ module.settings.layout.custom_id }}" class="atmc-hero-01 atmc-hero text-{{ module.alignment }} {{ name }} {% if module.settings.full_height %}atmc-full-height{% endif %} {% if module.settings.background_setting.background_type == 'image' && module.settings.background_setting.parallax %}atmc-parallax{% endif %} {% if (module.settings.background_setting.background_type == 'image' or module.settings.background_setting.background_type == 'video-image') and module.settings.background_setting.overlay %}atmc-overlay{% endif %} {% if module.settings.full_height %}atmc-full-height{% endif %} {{ module.settings.layout.custom_class }}" 
+			{% if module.settings.background_setting.background_type == 'solid' %}style="background-color:{{ module.settings.background_setting.solid_color.color }};"
+			{% elif module.settings.background_setting.background_type == 'gradient' %}
+			{% elif module.settings.background_setting.background_type == 'image' %}style="background-image:url('{{ module.settings.background_setting.background_image.src }}');"
+			{% elif module.settings.background_setting.background_type == 'video-image' %} data-vide-bg="mp4: {{ module.settings.background_setting.mp4_video }}, webm: {{ module.settings.background_setting.webm_video }}, ogv:{{ module.settings.background_setting.ogv_video }}, poster: {{ module.settings.background_setting.background_image.src }}" data-vide-options="posterType: detect, loop: true, muted: true, position: 50% 50%"
+			{% else %}
+			{% endif %}>
+			<div class="{% if module.settings.layout.enable_page_center %}atmc-container{% endif %}">
+
+				<div class="row-fluid">
+					<div class="span12 py-4 text-{{ module.content_01.alignment }} {% if module.content_01.text_white %}text-white{% endif %}">
+						{% if module.content_01.heading %}
+							{% if module.content_01.heading_size == 'h1' %}
+								<h1 class="atmc-hero-01_heading {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.content_01.heading }}</h1>
+							{% elif module.content_01.heading_size == 'h2' %}
+								<h2 class="atmc-hero-01_heading {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.content_01.heading }}</h2>
+							{% endif %}
+						{% endif %}
+						{% if module.content_01.description_text %}
+							<p class="{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.content_01.description_text }}</p>
+						{% endif %}
+						{% if module.content_01.cta %}
+							<div class="{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{% cta guid="{{ module.content_01.cta }}" %}</div>
+						{% endif %}
+					</div>
+				</div>
+
+			</div>
+			<div class="atmc-scroll-to {% if module.scroll_to_color == 'white' %}atmc-scroll-to-white{% endif %} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}"></div>
+		</div>
+
+		{# =============== CSS Styling =============== #}
+		{% require_css %}
+			<style>
+				{# Image overlay #}
+				{% if (module.settings.background_setting.overlay and module.settings.background_setting.background_type == 'image') or (module.settings.background_setting.overlay and module.settings.background_setting.background_type == 'video-image') %}
+					.{{ name }}:before {
+						background: {{ module.settings.background_setting.overlay_color.color }};
+						opacity: {{ module.settings.background_setting.overlay_color.opacity/100 }};
+					}
+				{% endif %}
+				{# Overwrite page center size #}
+				{% if module.settings.layout.overwrite_page_center %}
+					.{{ name }} .atmc-container {
+						max-width: {{ module.settings.layout.page_center_size }}px;
+					}
+				{% endif %}
+				{# Gradient BG #}
+				{% if module.settings.background_setting.background_type == 'gradient' %}
+					.{{ name }} {
+						background: {{ module.settings.background_setting.gradient_color_01.color }}; 
+						background: -moz-linear-gradient(-45deg, {{ module.settings.background_setting.gradient_color_01.color }} 0%, {{ module.settings.background_setting.gradient_color_02.color }} 100%); 
+						background: -webkit-linear-gradient(-45deg, {{ module.settings.background_setting.gradient_color_01.color }} 0%,{{ module.settings.background_setting.gradient_color_02.color }} 100%); 
+						background: linear-gradient(135deg, {{ module.settings.background_setting.gradient_color_01.color }} 0%,{{ module.settings.background_setting.gradient_color_02.color }} 100%);
+						filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ module.settings.background_setting.gradient_color_01.color }}', endColorstr='{{ module.settings.background_setting.gradient_color_02.color }}',GradientType=1 );
+					}
+				{% endif %}
+
+			</style>
+		{% end_require_css %}
+		{# =============== /CSS Styling =============== #}
+
+
+{{ require_js('https://cdnjs.cloudflare.com/ajax/libs/vide/0.5.1/jquery.vide.min.js') }}
+{% if module.settings.background_setting.background_type == 'video-image' %}
+	{% require_css %}
+	<style>
+		.{{ name }} > div:first-child > video {
+			opacity: 1!important;
+			visibility: visible!important;
+		}
+	</style>
+	{% end_require_css %}
+{% endif %}

@@ -1,0 +1,60 @@
+<div class="atmc-logo {% if module.layout == 'slider' %}{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}{% endif %} {% if module.enable_style_tab and module.styles.shadow.shadow %}shadow-md{% endif %}">
+		<div id="{{ module.custom_id }}" class="atmc-logo-01_repeater {% if module.layout == 'grid' %}atmc-grid atmc-grid-{{ module.items_per_row }}col{% else %}atmc-slider{% endif %} {{ module.custom_class }}"
+							 {% if module.layout == 'slider' %}
+								 data-slider-item="{{ module.items_per_row }}" 
+								 data-slider-arrows="{% if module.slider_settings.arrows %}true{% else %}false{% endif %}"
+								 data-slider-dots="{% if module.slider_settings.dots %}true{% else %}false{% endif %}"
+								 data-slider-autoplay="{% if module.slider_settings.autoplay %}true{% else %}false{% endif %}"
+								 data-slider-autoplayspeed="{{ module.slider_settings.autoplay_speed }}"
+								 data-slider-infinite="{% if module.slider_settings.infinite %}true{% else %}false{% endif %}"
+								 data-slider-fade="false"
+							 {% endif %}>
+			{% for item in module.repeater %}
+				{% if item.type == 'static' %}
+					<div class="atmc-logo-01 border-light hover:shadow-md rounded {% if module.layout != 'slider' %}{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}{% endif %}">
+						{% if item.image.src %}
+							{% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+							{% if item.image.size_type == 'auto' %}
+								{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+							{% elif item.image.size_type == 'auto_custom_max' %}
+								{% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.image.max_width }}px; max-height: {{ item.image.max_height }}px"' %}
+							{% endif %}
+							<img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ sizeAttrs }}>
+						{% endif %}
+					</div>
+				{% else %}
+					<a target="_blank" href="{{ item.url.href }}" class="atmc-logo-01 atmc-hover-scaledown border-light shadow-md hover:shadow-md rounded {% if module.layout != 'slider' %}{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}{% endif %}">
+					{% if item.image.src %}
+						{% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+						{% if item.image.size_type == 'auto' %}
+							{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+						{% elif item.image.size_type == 'auto_custom_max' %}
+							{% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.image.max_width }}px; max-height: {{ item.image.max_height }}px"' %}
+						{% endif %}
+						<img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ sizeAttrs }}>
+					{% endif %}
+					</a> 
+				{% endif %}
+			{% endfor %}
+		</div>
+</div>
+
+{% if module.enable_style_tab %}
+	{% require_css %}
+	<style>
+		{% scope_css %}
+			.atmc-logo {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }}
+				{{ module.styles.typography.text_alignment.css }}
+			}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %} 
+{% endif %}
+

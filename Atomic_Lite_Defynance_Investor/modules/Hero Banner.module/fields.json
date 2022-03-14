@@ -1,0 +1,508 @@
+[ {
+  "id" : "650c078d-f078-4684-a9b5-cbd865a0bba1",
+  "name" : "enable_animation",
+  "display_width" : null,
+  "label" : "Enable Animation",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "00003020-a5dc-02c5-fee8-e888b6d11461",
+  "name" : "animation",
+  "display_width" : null,
+  "label" : "Animation",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "650c078d-f078-4684-a9b5-cbd865a0bba1",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "fadeInLeft", "Fade In Left" ], [ "fadeInTop", "Fade In Top" ], [ "fadeInRight", "Fade In Right" ], [ "fadeInBottom", "Fade In Bottom" ] ],
+  "type" : "choice",
+  "default" : "fadeInBottom"
+}, {
+  "id" : "1019bfc9-74d6-1dfe-69a5-3a84ea611f32",
+  "name" : "settings",
+  "display_width" : null,
+  "label" : "Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "f30ce7ff-0fc3-723b-9c81-36667f20c371",
+    "name" : "background_setting",
+    "display_width" : null,
+    "label" : "Background",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+      "name" : "background_type",
+      "display_width" : null,
+      "label" : "Background Type",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "Search",
+      "choices" : [ [ "solid", "Solid Color" ], [ "gradient", "Gradient Color" ], [ "image", "Image Background" ], [ "video-image", "Video Background" ] ],
+      "type" : "choice",
+      "default" : "image"
+    }, {
+      "id" : "111444f3-eeb1-fac8-3d78-5affc283c654",
+      "name" : "background_image",
+      "display_width" : null,
+      "label" : "Background Image (1920x1080)",
+      "help_text" : "Recommended size: 1920x1080",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "[m]",
+        "operator" : "MATCHES_REGEX",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "responsive" : false,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "src" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Atomic/images/atomic-img-02.jpg",
+        "alt" : "atomic-hero",
+        "width" : 2520,
+        "height" : 1148
+      }
+    }, {
+      "id" : "c10e23f5-bdb3-0f85-3672-158c74685a0e",
+      "name" : "overlay",
+      "display_width" : null,
+      "label" : "Overlay",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "[m]",
+        "operator" : "MATCHES_REGEX",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "f50d0a51-2384-56d0-f50b-d29a8df4d1d2",
+      "name" : "overlay_color",
+      "display_width" : null,
+      "label" : "Overlay Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "[m]",
+        "operator" : "MATCHES_REGEX",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "type" : "color",
+      "default" : {
+        "color" : "#000000",
+        "opacity" : 30
+      }
+    }, {
+      "id" : "2e652aff-0dbf-7f45-f71f-a0ca06c84967",
+      "name" : "parallax",
+      "display_width" : null,
+      "label" : "Parallax",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "image",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "0bf49634-21e8-57aa-94d6-d1ac450f1f2b",
+      "name" : "solid_color",
+      "display_width" : null,
+      "label" : "Solid Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "solid",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "type" : "color",
+      "default" : {
+        "color" : "#ffffff",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "942acf3f-9594-c5df-0181-7fc6f77f77f6",
+      "name" : "gradient_color_01",
+      "display_width" : null,
+      "label" : "Gradient Color 01",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "gradient",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "type" : "color",
+      "default" : {
+        "color" : "#f3f3f3",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "7be3c451-d744-9b87-3c6e-8df557123b31",
+      "name" : "gradient_color_02",
+      "display_width" : null,
+      "label" : "Gradient Color 02",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "gradient",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "type" : "color",
+      "default" : {
+        "color" : "#ffffff",
+        "opacity" : 100
+      }
+    }, {
+      "picker" : "file",
+      "id" : "09df7b2f-bd91-d531-2086-0414020a93b2",
+      "name" : "mp4_video",
+      "display_width" : null,
+      "label" : "MP4 Video",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "video-image",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "type" : "file",
+      "default" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Ark/Hero_01/video/video-bg.mp4"
+    }, {
+      "picker" : "file",
+      "id" : "5ff72491-e33a-859d-fd79-27d5dc5753f8",
+      "name" : "webm_video",
+      "display_width" : null,
+      "label" : "WEBM Video",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "video-image",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "type" : "file",
+      "default" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Ark/Hero_01/video/video-bg.webm"
+    }, {
+      "picker" : "file",
+      "id" : "76bc7749-0f03-8d97-34b7-6e75f5908ffd",
+      "name" : "ogv_video",
+      "display_width" : null,
+      "label" : "OGV Video",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "ae0dccfc-11b3-209f-f8a1-b17c26dad452",
+        "controlling_value_regex" : "video-image",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "type" : "file",
+      "default" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Ark/Hero_01/video/video-bg.ogv"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "background_type" : "image",
+      "background_image" : {
+        "src" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Atomic/images/atomic-img-02.jpg",
+        "alt" : "atomic-hero",
+        "width" : 2520,
+        "height" : 1148
+      },
+      "overlay" : false,
+      "overlay_color" : {
+        "color" : "#000000",
+        "opacity" : 30
+      },
+      "parallax" : true,
+      "solid_color" : {
+        "color" : "#ffffff",
+        "opacity" : 100
+      },
+      "gradient_color_01" : {
+        "color" : "#f3f3f3",
+        "opacity" : 100
+      },
+      "gradient_color_02" : {
+        "color" : "#ffffff",
+        "opacity" : 100
+      },
+      "mp4_video" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Ark/Hero_01/video/video-bg.mp4",
+      "webm_video" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Ark/Hero_01/video/video-bg.webm",
+      "ogv_video" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Ark/Hero_01/video/video-bg.ogv"
+    }
+  }, {
+    "id" : "beeb2c91-071b-65d5-d611-344cd28a9cfd",
+    "name" : "layout",
+    "display_width" : null,
+    "label" : "Layout & Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "f0a0dc35-9f01-d920-0ab8-e319a25ccabf",
+      "name" : "enable_page_center",
+      "display_width" : null,
+      "label" : "Enable Page Center",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "117e601c-c516-85f7-85c8-292422a9e301",
+      "name" : "overwrite_page_center",
+      "display_width" : null,
+      "label" : "Overwrite Page Center",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "f0a0dc35-9f01-d920-0ab8-e319a25ccabf",
+        "controlling_value_regex" : "true",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "84c4ff4d-48f4-6eba-5730-e2afb10e4e8c",
+      "name" : "page_center_size",
+      "display_width" : null,
+      "label" : "Page Center Size (In Pixel)",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "117e601c-c516-85f7-85c8-292422a9e301",
+        "controlling_value_regex" : "true",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "slider",
+      "max" : 2000,
+      "step" : 1,
+      "type" : "number",
+      "default" : 700
+    }, {
+      "id" : "151d8967-54dc-b227-fa25-95eb6e199599",
+      "name" : "custom_id",
+      "display_width" : null,
+      "label" : "Custom ID",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "d566a761-5614-56f8-84b2-cd5687e05968",
+      "name" : "custom_class",
+      "display_width" : null,
+      "label" : "Custom Class",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "enable_page_center" : true,
+      "overwrite_page_center" : false,
+      "page_center_size" : 700
+    }
+  }, {
+    "id" : "3428ce92-70f5-1f14-c1cc-f968a0a14dcf",
+    "name" : "full_height",
+    "display_width" : null,
+    "label" : "Full Height",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "background_setting" : {
+      "background_type" : "image",
+      "background_image" : {
+        "src" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Atomic/images/atomic-img-02.jpg",
+        "alt" : "atomic-hero",
+        "width" : 2520,
+        "height" : 1148
+      },
+      "overlay" : false,
+      "overlay_color" : {
+        "color" : "#000000",
+        "opacity" : 30
+      },
+      "parallax" : true,
+      "solid_color" : {
+        "color" : "#ffffff",
+        "opacity" : 100
+      },
+      "gradient_color_01" : {
+        "color" : "#f3f3f3",
+        "opacity" : 100
+      },
+      "gradient_color_02" : {
+        "color" : "#ffffff",
+        "opacity" : 100
+      },
+      "mp4_video" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Ark/Hero_01/video/video-bg.mp4",
+      "webm_video" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Ark/Hero_01/video/video-bg.webm",
+      "ogv_video" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Ark/Hero_01/video/video-bg.ogv"
+    },
+    "layout" : {
+      "enable_page_center" : true,
+      "overwrite_page_center" : false,
+      "page_center_size" : 700
+    },
+    "full_height" : false
+  }
+}, {
+  "id" : "f6b56062-3797-4a4b-4a8c-8b6908432a79",
+  "name" : "content_01",
+  "display_width" : null,
+  "label" : "Content 01",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "31259d7e-f0e6-496a-f795-397ccc4136f2",
+    "name" : "alignment",
+    "display_width" : null,
+    "label" : "Alignment",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "placeholder" : "Search",
+    "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+    "type" : "choice",
+    "default" : "center"
+  }, {
+    "id" : "8f6760aa-bddd-604f-8513-91860456db51",
+    "name" : "text_white",
+    "display_width" : null,
+    "label" : "Text White",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "2585c1de-a26f-d1c9-ffc8-f1fe4b3e7664",
+    "name" : "heading",
+    "display_width" : null,
+    "label" : "Heading",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Atomic Hero"
+  }, {
+    "id" : "69b4dc16-caac-0474-f142-bf8666e3e5f6",
+    "name" : "heading_size",
+    "display_width" : null,
+    "label" : "Heading Size",
+    "required" : true,
+    "locked" : false,
+    "display" : "select",
+    "placeholder" : "Search",
+    "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ] ],
+    "type" : "choice",
+    "default" : "h1"
+  }, {
+    "id" : "481e7c5b-18f8-656e-3dc6-631238dd41d2",
+    "name" : "description_text",
+    "display_width" : null,
+    "label" : "Description Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in mi at felis mattis suscipit at in justo. Ut varius tristique faucibus."
+  }, {
+    "id" : "22c52abf-091d-71cc-acc8-b30b03cf10e2",
+    "name" : "cta",
+    "display_width" : null,
+    "label" : "CTA",
+    "required" : false,
+    "locked" : false,
+    "type" : "cta",
+    "default" : "9898dfb2-f2d5-40dd-ad0c-14960436fe8a"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "alignment" : "center",
+    "text_white" : true,
+    "heading" : "Atomic Hero",
+    "heading_size" : "h1",
+    "description_text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in mi at felis mattis suscipit at in justo. Ut varius tristique faucibus.",
+    "cta" : "9898dfb2-f2d5-40dd-ad0c-14960436fe8a"
+  }
+}, {
+  "id" : "c2b772c7-6ca6-5bec-f246-7f20a0613570",
+  "name" : "scroll_to_color",
+  "display_width" : null,
+  "label" : "Scroll To Color",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "dark", "Dark" ], [ "white", "White" ] ],
+  "type" : "choice",
+  "default" : "white"
+} ]

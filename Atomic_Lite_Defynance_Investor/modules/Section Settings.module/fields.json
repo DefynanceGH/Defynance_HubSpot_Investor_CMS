@@ -1,0 +1,47 @@
+[ {
+  "id" : "c626071b-6dc7-9815-986a-135cf3c387f9",
+  "name" : "overlay",
+  "display_width" : null,
+  "label" : "Overlay",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "55be732f-6c58-ed2f-65cc-40d4ace389d0",
+  "name" : "overlay_settings",
+  "display_width" : null,
+  "label" : "Overlay Settings",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "c626071b-6dc7-9815-986a-135cf3c387f9",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "children" : [ {
+    "id" : "89884646-fc92-db20-eab3-ea13f2e682be",
+    "name" : "color",
+    "display_width" : null,
+    "label" : "Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#000000",
+      "opacity" : 60
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "color" : {
+      "color" : "#000000",
+      "opacity" : 60
+    }
+  }
+} ]

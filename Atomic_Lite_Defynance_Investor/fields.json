@@ -1,0 +1,610 @@
+[ 
+	{
+		"children" : [ 
+					{
+						"name" : "header_option",
+						"label" : "Header Option",
+						"sortable" : false,
+						"required" : true,
+						"locked" : false,
+						"display" : "select",
+						"choices" : [ [ "default", "Built-in " ],[ "draganddrop", "Drag-and-Drop" ] ],
+						"type" : "choice",
+						"default" : "default"
+			},
+			{
+				"default" : false,
+				"label" : "Header Text White",
+				"locked" : false,
+				"name" : "header_text_white",
+				"required" : false,
+				"type" : "boolean"
+			},
+			{
+				"default" : {
+					"color" : "#ffff",
+					"opacity" : 100
+				},
+				"label" : "Header background color",
+				"locked" : false,
+				"name" : "header_bg_color",
+				"required" : false,
+				"type" : "color"
+			} 
+		],
+		"label" : "Header",
+		"locked" : false,
+		"name" : "header_group",
+		"required" : false,
+		"tab" : "CONTENT",
+		"type" : "group"
+	}, 
+ {
+  "children" : [ {
+    "default" : {
+      "color" : "#85868c",
+      "opacity" : 100
+    },
+    "label" : "Base color",
+    "locked" : false,
+    "name" : "base",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#ED7268",
+      "opacity" : 100
+    },
+    "label" : "Primary color",
+    "locked" : false,
+    "name" : "primary",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#6BBFF7",
+      "opacity" : 100
+    },
+    "label" : "Secondary color",
+    "locked" : false,
+    "name" : "secondary",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#FF695B",
+      "opacity" : 100
+    },
+    "label" : "Danger color",
+    "locked" : false,
+    "name" : "danger",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#FFBE4F",
+      "opacity" : 100
+    },
+    "label" : "Warning color",
+    "locked" : false,
+    "name" : "warning",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#3DCC79",
+      "opacity" : 100
+    },
+    "label" : "Success color",
+    "locked" : false,
+    "name" : "success",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#8D8D94",
+      "opacity" : 100
+    },
+    "label" : "Gray color",
+    "locked" : false,
+    "name" : "gray",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#dfdbd2",
+      "opacity" : 100
+    },
+    "label" : "Light Gray color",
+    "locked" : false,
+    "name" : "light_gray",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#fafafa",
+      "opacity" : 100
+    },
+    "label" : "Light color",
+    "locked" : false,
+    "name" : "light",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#4A5278",
+      "opacity" : 100
+    },
+    "label" : "Dark color",
+    "locked" : false,
+    "name" : "dark",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.colors_group.primary.color"
+      }
+    },
+    "label" : "Link color",
+    "locked" : false,
+    "name" : "link_color",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#c54a40",
+      "opacity" : 100
+    },
+    "label" : "Link Hover color",
+    "locked" : false,
+    "name" : "link_hover_color",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#c54a40",
+      "opacity" : 100
+    },
+    "label" : "Link Focus color",
+    "locked" : false,
+    "name" : "link_focus_color",
+    "required" : false,
+    "type" : "color"
+  }, {
+    "default" : {
+      "color" : "#c54a40",
+      "opacity" : 100
+    },
+    "label" : "Link Visited color",
+    "locked" : false,
+    "name" : "link_visited_color",
+    "required" : false,
+    "type" : "color"
+  } ],
+  "label" : "Colors",
+  "locked" : false,
+  "name" : "colors_group",
+  "required" : false,
+  "tab" : "CONTENT",
+  "type" : "group"
+}, {
+  "children" : [ {
+    "default" : {
+      "font" : "Roboto",
+      "font_set" : "GOOGLE",
+      "size" : {
+        "units" : "px",
+        "value" : 16
+      },
+      "variant" : "regular"
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.colors_group.base.color"
+      }
+    },
+    "label" : "Base",
+    "load_external_fonts" : true,
+    "locked" : false,
+    "name" : "base",
+    "required" : false,
+    "type" : "font",
+    "visibility" : {
+      "hidden_subfields" : {
+        "color" : true,
+        "styles" : true
+      }
+    }
+  }, {
+    "default" : {
+      "color" : "#333",
+      "size" : {
+        "units" : "px",
+        "value" : 48
+      },
+      "variant" : "700"
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "font" : "theme.typography_group.base.font",
+        "font_set" : "theme.typography_group.base.font_set"
+      }
+    },
+    "label" : "Heading 1",
+    "load_external_fonts" : true,
+    "locked" : false,
+    "name" : "heading_1",
+    "required" : false,
+    "type" : "font"
+  }, {
+    "default" : {
+      "color" : "#333",
+      "size" : {
+        "units" : "px",
+        "value" : 36
+      },
+      "variant" : "700"
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "font" : "theme.typography_group.base.font",
+        "font_set" : "theme.typography_group.base.font_set"
+      }
+    },
+    "label" : "Heading 2",
+    "load_external_fonts" : true,
+    "locked" : false,
+    "name" : "heading_2",
+    "required" : false,
+    "type" : "font"
+  }, {
+    "default" : {
+      "color" : "#333",
+      "size" : {
+        "units" : "px",
+        "value" : 30
+      },
+      "variant" : "700"
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "font" : "theme.typography_group.base.font",
+        "font_set" : "theme.typography_group.base.font_set"
+      }
+    },
+    "label" : "Heading 3",
+    "load_external_fonts" : true,
+    "locked" : false,
+    "name" : "heading_3",
+    "required" : false,
+    "type" : "font"
+  }, {
+    "default" : {
+      "color" : "#333",
+      "size" : {
+        "units" : "px",
+        "value" : 24
+      },
+      "variant" : "700"
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "font" : "theme.typography_group.base.font",
+        "font_set" : "theme.typography_group.base.font_set"
+      }
+    },
+    "label" : "Heading 4",
+    "load_external_fonts" : true,
+    "locked" : false,
+    "name" : "heading_4",
+    "required" : false,
+    "type" : "font"
+  }, {
+    "default" : {
+      "color" : "#333",
+      "size" : {
+        "units" : "px",
+        "value" : 20
+      },
+      "variant" : "700"
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "font" : "theme.typography_group.base.font",
+        "font_set" : "theme.typography_group.base.font_set"
+      }
+    },
+    "label" : "Heading 5",
+    "load_external_fonts" : true,
+    "locked" : false,
+    "name" : "heading_5",
+    "required" : false,
+    "type" : "font"
+  }, {
+    "default" : {
+      "color" : "#333",
+      "size" : {
+        "units" : "px",
+        "value" : 18
+      },
+      "variant" : "700"
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.colors_group.base.color",
+        "font" : "theme.typography_group.base.font",
+        "font_set" : "theme.typography_group.base.font_set"
+      }
+    },
+    "label" : "Heading 6",
+    "load_external_fonts" : true,
+    "locked" : false,
+    "name" : "heading_6",
+    "required" : false,
+    "type" : "font"
+  } ],
+  "label" : "Typography",
+  "locked" : false,
+  "name" : "typography_group",
+  "required" : false,
+  "tab" : "CONTENT",
+  "type" : "group"
+}, {
+  "children" : [ {
+    "default" : 4,
+    "display" : "slider",
+    "label" : "Button Border radius",
+    "locked" : false,
+    "max" : 100,
+    "min" : 0,
+    "name" : "border_radius",
+    "required" : false,
+    "step" : 1,
+    "type" : "number"
+  }, {
+    "default" : true,
+    "label" : "Scroll to top",
+    "locked" : false,
+    "name" : "scroll_to_top",
+    "required" : false,
+    "type" : "boolean"
+  }, {
+    "default" : true,
+    "label" : "Animation",
+    "locked" : false,
+    "name" : "animation_toggle",
+    "required" : false,
+    "type" : "boolean"
+  } ],
+  "label" : "Components",
+  "locked" : false,
+  "name" : "components_group",
+  "required" : false,
+  "tab" : "CONTENT",
+  "type" : "group"
+}, {
+  "children" : [ {
+    "default" : 140,
+    "display" : "slider",
+    "label" : "Vertical spacing",
+    "locked" : false,
+    "max" : 500,
+    "min" : 0,
+    "name" : "vertical_spacing",
+    "required" : false,
+    "step" : 1,
+    "type" : "number"
+  }, {
+    "default" : 1400,
+    "display" : "slider",
+    "label" : "Maximum content width",
+    "locked" : false,
+    "max" : 2500,
+    "min" : 900,
+    "name" : "max_width",
+    "required" : false,
+    "step" : 1,
+    "type" : "number"
+  } ],
+  "label" : "Spacing",
+  "locked" : false,
+  "name" : "spacing_group",
+  "required" : false,
+  "tab" : "CONTENT",
+  "type" : "group"
+}, {
+  "children" : [ {
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.colors_group.dark.color"
+      }
+    },
+    "label" : "Form header background",
+    "locked" : false,
+    "name" : "form_header_background",
+    "required" : false,
+    "type" : "color",
+    "visibility" : {
+      "hidden_subfields" : {
+        "opacity" : true
+      }
+    }
+  }, {
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.colors_group.base.color"
+      }
+    },
+    "label" : "Form header text color",
+    "locked" : false,
+    "name" : "form_header_text_color",
+    "required" : false,
+    "type" : "color",
+    "visibility" : {
+      "hidden_subfields" : {
+        "opacity" : true
+      }
+    }
+  }, {
+    "default" : {
+      "color" : "#fff"
+    },
+    "label" : "Form Background Color",
+    "locked" : false,
+    "name" : "form_background_color",
+    "required" : false,
+    "type" : "color",
+    "visibility" : {
+      "hidden_subfields" : {
+        "opacity" : true
+      }
+    }
+  }, {
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.colors_group.light.color"
+      }
+    },
+    "label" : "Form border color",
+    "locked" : false,
+    "name" : "form_border_color",
+    "required" : false,
+    "type" : "color",
+    "visibility" : {
+      "hidden_subfields" : {
+        "opacity" : true
+      }
+    }
+  }, {
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.colors_group.base.color"
+      }
+    },
+    "label" : "Form label color",
+    "locked" : false,
+    "name" : "form_label_color",
+    "required" : false,
+    "type" : "color",
+    "visibility" : {
+      "hidden_subfields" : {
+        "opacity" : true
+      }
+    }
+  }, {
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.colors_group.light.color"
+      }
+    },
+    "label" : "Form field background color",
+    "locked" : false,
+    "name" : "form_feld_bg_color",
+    "required" : false,
+    "type" : "color",
+    "visibility" : {
+      "hidden_subfields" : {
+        "opacity" : true
+      }
+    }
+  }, {
+    "default" : {
+      "color" : "#dddde4"
+    },
+    "label" : "Form field border color",
+    "locked" : false,
+    "name" : "form_field_border_color",
+    "required" : false,
+    "type" : "color",
+    "visibility" : {
+      "hidden_subfields" : {
+        "opacity" : true
+      }
+    }
+  }, {
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.colors_group.secondary.color"
+      }
+    },
+    "label" : "Form field focus border color",
+    "locked" : false,
+    "name" : "form_field_focus_border_color",
+    "required" : false,
+    "type" : "color",
+    "visibility" : {
+      "hidden_subfields" : {
+        "opacity" : true
+      }
+    }
+  }, {
+    "default" : {
+      "color" : "#fff"
+    },
+    "label" : "Form button text color",
+    "locked" : false,
+    "name" : "form_button_text_color",
+    "required" : false,
+    "type" : "color",
+    "visibility" : {
+      "hidden_subfields" : {
+        "opacity" : true
+      }
+    }
+  }, {
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.colors_group.primary.color"
+      }
+    },
+    "label" : "Form button background color",
+    "locked" : false,
+    "name" : "form_button_bg_color",
+    "required" : false,
+    "type" : "color",
+    "visibility" : {
+      "hidden_subfields" : {
+        "opacity" : true
+      }
+    }
+  } ],
+  "label" : "Form",
+  "locked" : false,
+  "name" : "form_group",
+  "required" : false,
+  "tab" : "CONTENT",
+  "type" : "group"
+} ]

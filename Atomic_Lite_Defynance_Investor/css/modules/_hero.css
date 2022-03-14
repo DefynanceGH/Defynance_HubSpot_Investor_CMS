@@ -1,0 +1,32 @@
+/* Hero 01 */
+.atmc-hero-01 {
+	position: relative;
+	width: 100%;
+	padding: 10rem 0 13rem;
+}
+.atmc-hero-01 .atmc-container > .row-fluid > .span12 {
+	position: relative;
+}
+.atmc-hero-01 .atmc-container > .row-fluid > .span12:before,
+.atmc-hero-01 .atmc-container > .row-fluid > .span12:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-color: #fff;
+	opacity: 0.5;
+	height: 40px;
+	width: 1px;
+}
+.atmc-hero-01 .atmc-container > .row-fluid > .span12:before {
+	top: -45px;
+}
+.atmc-hero-01 .atmc-container > .row-fluid > .span12:after {
+	bottom: -45px;
+}
+
+/* Hero 02 */
+.atmc-hero-02 {
+	padding: 3rem 0;
+} 

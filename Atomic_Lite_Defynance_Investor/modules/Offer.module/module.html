@@ -1,0 +1,47 @@
+<div id="{{ module.custom_id }}" class="atmc-offer-02 {% if !module.enable_style_tab %}text-{{ module.alignment }}{% endif %} {% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {% if module.enable_style_tab and module.styles.shadow.shadow %}shadow-md{% endif %} {{ name }} {{ module.custom_class }}">
+	{% if module.heading %}
+	  <h2 class="{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.heading }}</h2>
+	{% endif %}
+	{% if module.content %}
+	  <div class="{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.content }}</div>
+	{% endif %}
+	{% if module.cta %}
+	  <p class="mt-8 {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{% cta guid="{{ module.cta }}" %}</p>
+	{% endif %}
+</div>
+
+{% if module.enable_style_tab %}
+	{% require_css %}
+	<style>
+		{% scope_css %}
+			.atmc-offer-02 {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }}
+				{{ module.styles.typography.text_alignment.css }}
+			}
+			{% if module.styles.typography.customize_heading_color %}
+			.atmc-offer-02 h1,
+			.atmc-offer-02 h2,
+			.atmc-offer-02 h3,
+			.atmc-offer-02 h4,
+			.atmc-offer-02 h5,
+			.atmc-offer-02 h6 {
+				color: {{ module.styles.typography.heading_color.color }};
+				opacity: {{ module.styles.typography.heading_color.opacity /100 }};
+			}
+			{% endif %}
+			{% if module.styles.typography.customize_text_color %}
+			.atmc-offer-02 *:not(a):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+				color: {{ module.styles.typography.text_color.color }};
+				opacity: {{ module.styles.typography.text_color.opacity /100 }};
+			}
+			{% endif %}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %} 
+{% endif %}

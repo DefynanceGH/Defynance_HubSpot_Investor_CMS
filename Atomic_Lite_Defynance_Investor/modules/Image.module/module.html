@@ -1,0 +1,33 @@
+<div id="{{ module.custom_id }}" class="atmc-image-default {% if !module.enable_style_tab %}{% if module.alignment == 'center' %}flex justify-center{% elif module.alignment == 'right' %}flex justify-end{% endif %}{% endif %} {% if module.enable_style_tab and module.styles.shadow.shadow %}shadow-md{% endif %} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %} {{ module.custom_class }}">
+	{% if module.image.src %}
+		{% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+		{% if module.image.size_type == 'auto' %}
+			{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+		{% elif module.image.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image.max_width }}px; max-height: {{ module.image.max_height }}px"' %}
+		{% endif %}
+	<div class="inline-block">
+		<img src="{{ module.image.src }}" alt="{{ module.image.alt }}" {{ sizeAttrs }}>
+	</div>
+	{% endif %}
+</div>
+
+
+{% if module.enable_style_tab %}
+	{% require_css %}
+	<style>
+		{% scope_css %}
+			.atmc-image-default {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }}
+				{{ module.styles.typography.text_alignment.css }}
+			}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %}
+{% endif %}

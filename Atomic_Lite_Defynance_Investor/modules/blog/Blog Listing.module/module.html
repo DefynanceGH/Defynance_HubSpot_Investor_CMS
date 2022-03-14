@@ -1,0 +1,61 @@
+{% if module.variant == 'blog-heading' %}
+
+	{% if tag %}
+	  <h1 class="atmc-blog-header_title">{{ group.public_title }}: {{ page_meta.html_title|split(' | ')|last }}</h1>
+	{% elif blog_author %}
+	  <h1 class="atmc-blog-header_title mb-6">{{ blog_author.display_name }}</h1>
+	<p>{{ blog_author.bio }}</p>
+	{% else %}
+	  <h1 class="atmc-blog-header_title">{{ group.public_title }}</h1>
+	  {% if group.description %}<h4 class="atmc-blog-header_subtitle">{{ group.description }}</h4>{% endif %}
+	{% endif %}
+
+{% elif module.variant == 'listing' %}
+
+	<div class="atmc-grid atmc-grid-3col">
+		{% for content in contents %}
+		<div class="atmc-grid-col">
+			{% if content.post_list_summary_featured_image %}
+			<a class="atmc-blog-index-01_post-image-wrapper atmc-ratio-3-2 rounded mb-4" href="{{ content.absolute_url }}">
+				<div class="atmc-blog-index-01_post-image" style="background-image: url('{{ content.featured_image }}');"></div>
+			</a>
+			{% endif %}
+			<div class="atmc-blog-index_post-content  blog-index_post-content--small">
+				<h2 class="atmc-h4"><a href="{{ content.absolute_url }}">{{ content.name }}</a></h2>
+				{% if content_group.show_summary_in_listing %}
+				{{ content.post_list_content|truncatehtml(100) }}
+				{% endif %}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+{% else %}
+
+		{% if contents.total_page_count > 1 %}
+			<div class="atmc-blog-pagination">
+				{% set page_list = [-2, -1, 0, 1, 2] %}
+				{% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+				{% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+				{% elif current_page_num == 2 %}{% set offset = 1 %}
+				{% elif current_page_num == 1 %}{% set offset = 2 %}
+				{% else %}{% set offset = 0 %}{% endif %}
+
+				<a class="atmc-blog-pagination_link atmc-blog-pagination_prev-link {{ "blog-pagination_prev-link--disabled" if !last_page_num }}" href="{{ blog_page_link(last_page_num) }}">
+					{% icon name="chevron-left" style="SOLID", width="13", no_wrapper=True %}
+					Prev
+				</a>
+				{% for page in page_list %}
+					{% set this_page = current_page_num + page + offset %}
+					{% if this_page > 0 and this_page <= contents.total_page_count %}
+						<a class="atmc-blog-pagination_link atmc-blog-pagination_number-link {{ "blog-pagination_link--active" if this_page == current_page_num }}" href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+					{% endif %}
+				{% endfor %}
+				<a class="atmc-blog-pagination_link atmc-blog-pagination_next-link {{ "blog-pagination_next-link--disabled" if !next_page_num }}" href="{{ blog_page_link(current_page_num + 1) }}">
+					Next
+					{% icon name="chevron-right" style="SOLID", width="13", no_wrapper=True %}
+				</a>
+			</div>
+		{% endif %}
+
+{% endif %}

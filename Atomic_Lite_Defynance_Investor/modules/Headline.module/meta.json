@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "https://cdn2.hubspot.net/hubfs/2333817/GiantFocal_Marketplace/Atomic/icons/heading.svg",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 67160946702,
+  "label" : "Headline",
+  "is_available_for_new_content" : true
+}

@@ -1,0 +1,54 @@
+<div id="{{ module.custom_id }}" class="atmc-form-01 {% if !module.enable_style_tab and module.text_white %}atmc-form-white{% endif %} {% if module.enable_style_tab and module.styles.shadow.shadow %}shadow-md{% endif %} {% if !module.enable_style_tab %}text-{{ module.alignment }}{% endif %} {{ name }} {{ module.custom_class }}">
+	{% if module.heading %}
+	<h3 class="{% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.heading }}</h3>
+	{% endif %}
+	<div class="{% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">
+		{% form
+			form_to_use="{{ module.form.form_id }}"
+			response_response_type="{{ module.form.response_type }}"
+			response_message="{{ module.form.message }}"
+			response_redirect_id="{{ module.form.redirect_id }}"
+			response_redirect_url="{{module.form.redirect_url}}"
+			gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+		%}
+	</div>
+	{% if module.form_footer %}
+	<div class="mt-6 atmc-form-01_footer {% if !module.enable_style_tab and module.text_white %}text-white{% endif %} {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %}">{{ module.form_footer }}</div>
+	{% endif %}
+</div>
+
+{% if module.enable_style_tab %}
+	{% require_css %}
+	<style>
+		{% scope_css %}
+			.atmc-form-01 {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }}
+				{{ module.styles.typography.text_alignment.css }}
+			}
+			{% if module.styles.typography.customize_heading_color %}
+			.atmc-form-01 h1,
+			.atmc-form-01 h2,
+			.atmc-form-01 h3,
+			.atmc-form-01 h4,
+			.atmc-form-01 h5,
+			.atmc-form-01 h6 {
+				color: {{ module.styles.typography.heading_color.color }};
+				opacity: {{ module.styles.typography.heading_color.opacity /100 }};
+			}
+			{% endif %}
+			{% if module.styles.typography.customize_text_color %}
+			.atmc-form-01 *:not(a):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(input):not(textarea):not(select) {
+				color: {{ module.styles.typography.text_color.color }};
+				opacity: {{ module.styles.typography.text_color.opacity /100 }};
+			}
+			{% endif %}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %}
+{% endif %}

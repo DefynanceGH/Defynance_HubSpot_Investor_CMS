@@ -1,0 +1,16 @@
+<!--
+    templateType: email_subscription_preferences_page
+    isAvailableForNewContent: true
+    label: Subscription Preferences
+    screenshotPath: ../../images/template-previews/email-preference.jpeg
+-->
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<div class="dnd-section">
+  <div class="atmc-container atmc-container-xs">
+    {% module "subscription_preferences" path="@hubspot/email_subscriptions", no_wrapper=True %}
+  </div>
+</div>
+{% endblock body %}

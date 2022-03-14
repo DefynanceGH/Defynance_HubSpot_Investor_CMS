@@ -1,0 +1,32 @@
+<!--
+    templateType: error_page
+    isAvailableForNewContent: true
+    label: 404
+    screenshotPath: ../../images/template-previews/404.jpeg
+-->
+
+
+{% extends "../layouts/base.html" %}
+
+
+{% block body %}
+<div class="dnd-section">
+	<div class="dnd-column">
+		<div class="atmc-container text-center">
+			{% module "content_404" 
+				path='../../modules/Content',
+				sub_heading='',
+				heading='404',
+				heading_size='h1',
+				intro_content='PAGE NOT FOUND',
+				content='',
+				alignment="center",
+				no_wrapper=true
+			%}
+			<p>
+				<a class="atmc-btn atmc-btn-outline-primary mt-8" href="/">Return to Home</a>
+			</p>
+		</div>
+	</div>
+</div>
+{% endblock body %}

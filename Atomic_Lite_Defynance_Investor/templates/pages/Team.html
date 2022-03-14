@@ -1,0 +1,59 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Our Team
+    screenshotPath: ../../images/template-previews/team.jpg
+-->
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+	<main class="body-container-wrapper">
+		{% dnd_area "dnd_area" class='body-container', label='Main section' %}
+	 
+		
+		{% dnd_section 
+		  padding={
+				'top': 0,
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			},
+			full_width=true
+		%}
+      {% dnd_module 'sp_banner' 
+				path='../../modules/Hero Banner 02',
+				label="Hero Banner",
+				width=12
+			%}
+				{% module_attribute 'settings' is_json=True %}
+					{
+	          "background_setting": {
+	            "parallax": false,
+	            "overlay": true
+	          }
+					}
+				{% end_module_attribute %}
+				{% module_attribute 'content_02' is_json=True %}
+					{
+						"heading": "Atomic Lite - Team"
+					}
+				{% end_module_attribute %}
+			{% end_dnd_module %}
+		{% end_dnd_section %}
+		
+
+		
+		{% dnd_section %}
+			{% dnd_module 'timeline_01' path='../../modules/Team',
+				layout= 'grid',
+				items_per_row=3,
+				alignment='center'
+			%}
+			{% end_dnd_module %}
+		{% end_dnd_section %}
+		
+		
+    {% end_dnd_area %}
+	</main>
+{% endblock body %}

@@ -1,0 +1,88 @@
+.atmc-color-base,
+.atmc-color-base *:not(.atmc-btn) {
+	color: {{ base }};
+}
+.atmc-color-primary,
+.atmc-color-primary *:not(.atmc-btn) {
+	color: {{ primary }};
+}
+.atmc-color-secondary,
+.atmc-color-secondary *:not(.atmc-btn) {
+	color: {{ secondary }};
+}
+
+.atmc-color-warning,
+.atmc-color-warning *:not(.atmc-btn) {
+	color: {{ warning }};
+}
+.atmc-color-danger,
+.atmc-color-danger *:not(.atmc-btn) {
+	color: {{ danger }};
+}
+.atmc-color-success,
+.atmc-color-success *:not(.atmc-btn) {
+	color: {{ success }};
+}
+.atmc-color-gray,
+.atmc-color-gray *:not(.atmc-btn) {
+	color: {{ gray }};
+}
+.atmc-color-lightgray,
+.atmc-color-lightgray *:not(.atmc-btn) {
+	color: {{ lightgray }};
+}
+.atmc-color-light,
+.atmc-color-light *:not(.atmc-btn) {
+	color: {{ light }};
+}
+.atmc-color-dark,
+.atmc-color-dark *:not(.atmc-btn) {
+	color: {{ dark }};
+}
+
+
+.atmc-color-white,
+.atmc-color-white *:not(.atmc-btn) {
+	color: #fff;
+}
+
+
+/* Icon Fill Colors */
+.atmc-icon-base svg {
+	fill: {{ base }};
+}
+.atmc-icon-primary svg {
+	fill: {{ primary }};
+}
+.atmc-icon-secondary svg {
+	fill: {{ secondary }};
+}
+.atmc-icon-danger svg {
+	fill: {{ danger }};
+}
+.atmc-icon-warning svg {
+	fill: {{ warning }};
+}
+.atmc-icon-success svg {
+	fill: {{ success }};
+}
+.atmc-icon-gray svg {
+	fill: {{ gray }};
+}
+.atmc-icon-lightgray svg {
+	fill: {{ lightgray }};
+}
+.atmc-icon-light svg {
+	fill: {{ light }};
+}
+.atmc-icon-dark svg {
+	fill: {{ dark }};
+}
+.atmc-icon-white svg {
+	fill: #fff;
+}
+
+
+
+
+

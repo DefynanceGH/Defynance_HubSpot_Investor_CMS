@@ -1,0 +1,31 @@
+<!--
+    templateType: error_page
+    isAvailableForNewContent: true
+    label: 500
+    screenshotPath: ../../images/template-previews/500.jpeg
+-->
+
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+
+<div class="dnd-section">
+	<div class="dnd-column">
+		<div class="atmc-container text-center">
+			{% module "content_404" 
+				path='../../modules/Content',
+				sub_heading='',
+				heading='500',
+				heading_size='h1',
+				intro_content="",
+				content='',
+				alignment="center",
+				no_wrapper=true
+			%}
+			<p>Sorry, an internal server error occurred. But have no fear, we're on the case!</p>
+		</div>
+	</div>
+</div>
+
+{% endblock body %}

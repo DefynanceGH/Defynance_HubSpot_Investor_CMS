@@ -1,0 +1,61 @@
+<div id="{{ module.custom_id }}" class="atmc-feature {% if module.enable_style_tab and module.styles.shadow.shadow %}shadow-md{% endif %}">
+	<div class="atmc-feature-01 p-12 shadow-xl rounded bg-white {% if module.enable_animation %}sr-invisible {{ module.animation }}{% endif %} {% if !module.enable_style_tab %}text-{{ module.alignment }}{% endif %} {{ name }} {{ module.custom_class }}">
+		{% if module.icon_type == 'icon' %}
+			<div class="fill-primary">
+				{% icon name="{{ module.icon.name }}" style="{{ module.icon.type }}" unicode="{{ module.icon.unicode }}" %}
+			</div>
+		{% else %}
+			{% if module.image.src %}
+				{% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+			{% if module.image.size_type == 'auto' %}
+				{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+			{% elif module.image.size_type == 'auto_custom_max' %}
+				{% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image.max_width }}px; max-height: {{ module.image.max_height }}px"' %}
+			{% endif %}
+				<img src="{{ module.image.src }}" alt="{{ module.image.alt }}" {{ sizeAttrs }}>
+			{% endif %}
+		{% endif %}
+		{% if module.heading %}
+			<h3 class="atmc-h4 mt-3">{{ module.heading }}</h3>
+		{% endif %}
+		{% if module.description %}
+			<p>{{ module.description }}</p>
+		{% endif %}
+	</div>
+</div>
+
+{% if module.enable_style_tab %}
+	{% require_css %}
+	<style>
+		{% scope_css %}
+			.atmc-feature {
+				{% if module.styles.background.background_option == 'solid' %}
+				background-color: {{ module.styles.background.bg_color.color }};
+				{% elif module.styles.background.background_option == 'image' %}
+				{{ module.styles.background.bg_image.css }}
+				{% endif %}
+				{% if module.styles.border.enable_border %}{{ module.styles.border.border.css }}{% endif %}
+				{{ module.styles.spacing.spacing.css }}
+				{{ module.styles.typography.text_alignment.css }}
+			}
+			{% if module.styles.typography.customize_heading_color %}
+			.atmc-feature h1,
+			.atmc-feature h2,
+			.atmc-feature h3,
+			.atmc-feature h4,
+			.atmc-feature h5,
+			.atmc-feature h6 {
+				color: {{ module.styles.typography.heading_color.color }};
+				opacity: {{ module.styles.typography.heading_color.opacity /100 }};
+			}
+			{% endif %}
+			{% if module.styles.typography.customize_text_color %}
+			.atmc-feature *:not(a):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+				color: {{ module.styles.typography.text_color.color }};
+				opacity: {{ module.styles.typography.text_color.opacity /100 }};
+			}
+			{% endif %}
+		{% end_scope_css %}
+	</style>
+	{% end_require_css %}
+{% endif %}

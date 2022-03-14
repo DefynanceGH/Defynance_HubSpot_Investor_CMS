@@ -1,0 +1,29 @@
+.atmc-pl-01_box {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+.atmc-pl-01_box img {
+	margin: auto;
+}
+.atmc-pl-01 .atmc-slider .atmc-pl-01_box {
+	margin: 3rem 0;
+}
+/* Highlight */
+.atmc-pl-01_highlight {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	margin: 0;
+	padding: 0.5rem 0.7rem;
+	font-size: 0.8rem;
+	line-height: 1;
+	color: #fff!important;
+}
+
+/* Price */
+.atmc-pl-01_price {
+	font-weight: bold;
+	font-size: 1.1rem;
+	color: var(--primary)!important;
+}

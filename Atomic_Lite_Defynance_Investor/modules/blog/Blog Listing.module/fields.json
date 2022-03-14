@@ -1,0 +1,12 @@
+[ {
+  "id" : "690d0079-6908-f840-63d5-8cd8ca952fa0",
+  "name" : "variant",
+  "display_width" : null,
+  "label" : "Variant",
+  "required" : true,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "blog-heading", "Blog Heading" ], [ "listing", "Listing" ], [ "pagination", "Pagination" ] ],
+  "type" : "choice",
+  "default" : "listing"
+} ]

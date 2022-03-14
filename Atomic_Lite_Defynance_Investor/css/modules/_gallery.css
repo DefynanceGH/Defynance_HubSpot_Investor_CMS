@@ -1,0 +1,24 @@
+.atmc-gallery-01_img {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-bottom: 80%;
+	margin-bottom: 1rem;
+	display: block;
+}
+.atmc-gallery-01_img img {
+	width: 100%;
+	max-width: 100%;
+  height: auto;
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.atmc-gallery-01_img {
+		background: none!important;
+  	padding-bottom: 0;
+	}
+	.atmc-gallery-01_img img {
+	  display: block;
+	}
+}

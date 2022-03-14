@@ -1,0 +1,432 @@
+
+/* Buttons */
+.atmc-btn,
+.hs-button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none!important;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: .75rem 1rem;
+  letter-spacing: 0.05px;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border-radius: {{ border_radius }}px;
+  border: 2px solid;
+  user-select: none;
+  -webkit-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+  .atmc-btn:hover,
+  .hs-button:hover {
+    transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+  }
+
+
+@media (min-width: 768px) {
+	.hs_cos_wrapper_type_cta + .hs_cos_wrapper_type_cta {
+		margin-left: .75rem;
+	}
+}
+
+/* ------------- Button Sizes -------------- */
+
+.atmc-btn-s {
+  font-size: .875rem;
+  padding: .5rem .625rem;
+}
+.atmc-btn-m {
+  font-size: 1rem;
+  padding: .75rem 1rem;
+}
+.atmc-btn-l {
+  font-size: 1.25rem;
+  padding: .9375rem 1.875rem;
+}
+
+/* ------------- Button Styles -------------- */
+
+/* Button Primary */
+.atmc-btn-primary,
+.hs-button {
+  color: #fff!important;
+  background: {{ primary }}!important;
+  border-color: {{ primary }};
+}
+  .atmc-btn-primary:hover,
+  .hs-button:hover {
+    background: {{ primary }}!important; 
+    border-color: {{ primary }};
+  }
+
+
+
+/* Button Outline Primary */
+.atmc-btn-outline-primary {
+  color: {{ primary }}!important;
+  background: none!important;
+  border-color: {{ primary }};
+}
+  .atmc-btn-outline-primary:hover {
+    color: #fff!important;
+    background: {{ primary }}!important;
+  }
+	.atmc-btn-outline-primary.atmc-btn-icon:hover .atmc-btn-icon_icon {
+		border-color: #fff;
+	}
+	.atmc-btn-outline-primary.atmc-btn-icon:hover .atmc-btn-icon_icon svg {
+		fill: #fff;
+	}
+
+/* Button Secondary */
+.atmc-btn-secondary {
+  color: #fff!important;
+  background: {{ secondary }}!important;
+  border-color: {{ secondary }};
+}
+  .atmc-btn-secondary:hover {
+    background: {{ primary }}!important; 
+    border-color: {{ primary }};
+  }
+
+/* Button Outline Secondary */
+.atmc-btn-outline-secondary {
+  color: {{ secondary }}!important;
+  background: none!important;
+  border-color: {{ secondary }};
+}
+  .atmc-btn-outline-secondary:hover {
+    color: #fff!important;
+    background: {{ secondary }}!important;
+  }
+	.atmc-btn-outline-secondary.atmc-btn-icon:hover .atmc-btn-icon_icon {
+		border-color: #fff;
+	}
+	.atmc-btn-outline-secondary.atmc-btn-icon:hover .atmc-btn-icon_icon svg {
+		fill: #fff;
+	}
+
+/* Button White */
+.atmc-btn-white {
+  color: {{ primary }}!important;
+  background: #fff!important;
+  border-color: #fff;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+  .atmc-btn-white:hover {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+/* Button Outline White */
+.atmc-btn-outline-white {
+  color: #fff!important;
+  background: none!important;
+  border-color: #fff;
+}
+  .atmc-btn-outline-white:hover {
+    color: {{ base }}!important;
+    background: #fff!important;
+  }
+	.atmc-btn-outline-white.atmc-btn-icon:hover .atmc-btn-icon_icon {
+		border-color: {{ base }};
+	}
+	.atmc-btn-outline-white.atmc-btn-icon:hover .atmc-btn-icon_icon svg {
+		fill: {{ base }};
+	}
+
+/* Button White */
+.atmc-btn-dark {
+  color: #fff!important;
+  background: {{ dark }}!important;
+  border-color: {{ dark }};
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+  .atmc-btn-dark:hover {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+/* Button Outline White */
+.atmc-btn-outline-dark {
+  color: {{ dark }}!important;
+  background: none!important;
+  border-color: {{ dark }};
+}
+  .atmc-btn-outline-dark:hover {
+    color: #fff!important;
+    background: {{ dark }}!important;
+  }
+	.atmc-btn-outline-dark.atmc-btn-icon:hover .atmc-btn-icon_icon {
+		border-color: #fff;
+	}
+	.atmc-btn-outline-dark.atmc-btn-icon:hover .atmc-btn-icon_icon svg {
+		fill: #fff;
+	}
+
+/* Button Base */
+.atmc-btn-base {
+  color: #fff!important;
+  background: {{ base }}!important;
+  border-color: {{ base }};
+}
+  .atmc-btn-base:hover {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+/* Button Outline Base */
+.atmc-btn-outline-base {
+  color: {{ base }}!important;
+  background: none!important;
+  border-color: {{ base }};
+}
+  .atmc-btn-outline-base:hover {
+    color: #fff!important;
+    background: {{ base }}!important;
+  }
+	.atmc-btn-outline-base.atmc-btn-icon:hover .atmc-btn-icon_icon {
+		border-color: #fff;
+	}
+	.atmc-btn-outline-base.atmc-btn-icon:hover .atmc-btn-icon_icon svg {
+		fill: #fff;
+	}
+
+/* Button Danger */
+.atmc-btn-danger {
+  color: #fff!important;
+  background: {{ danger }}!important;
+  border-color: {{ danger }};
+}
+  .atmc-btn-danger:hover {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+/* Button Outline Base */
+.atmc-btn-outline-danger {
+  color: {{ danger }}!important;
+  background: none!important;
+  border-color: {{ danger }};
+}
+  .atmc-btn-outline-danger:hover {
+    color: #fff!important;
+    background: {{ danger }}!important;
+  }
+	.atmc-btn-outline-danger.atmc-btn-icon:hover .atmc-btn-icon_icon {
+		border-color: #fff;
+	}
+	.atmc-btn-outline-danger.atmc-btn-icon:hover .atmc-btn-icon_icon svg {
+		fill: #fff;
+	}
+
+/* Button Warning */
+.atmc-btn-warning {
+  color: #fff!important;
+  background: {{ warning }}!important;
+  border-color: {{ warning }};
+}
+  .atmc-btn-warning:hover {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+/* Button Outline Warning */
+.atmc-btn-outline-warning {
+  color: {{ warning }}!important;
+  background: none!important;
+  border-color: {{ warning }};
+}
+  .atmc-btn-outline-warning:hover {
+    color: #fff!important;
+    background: {{ warning }}!important;
+  }
+	.atmc-btn-outline-warning.atmc-btn-icon:hover .atmc-btn-icon_icon {
+		border-color: #fff;
+	}
+	.atmc-btn-outline-warning.atmc-btn-icon:hover .atmc-btn-icon_icon svg {
+		fill: #fff;
+	}
+
+/* Button Success */
+.atmc-btn-success {
+  color: #fff!important;
+  background: {{ success }}!important;
+  border-color: {{ success }};
+}
+  .atmc-btn-success:hover {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+/* Button Outline Success */
+.atmc-btn-outline-success {
+  color: {{ success }}!important;
+  background: none!important;
+  border-color: {{ success }};
+}
+  .atmc-btn-outline-success:hover {
+    color: #fff!important;
+    background: {{ success }}!important;
+  }
+	.atmc-btn-outline-success.atmc-btn-icon:hover .atmc-btn-icon_icon {
+		border-color: #fff;
+	}
+	.atmc-btn-outline-success.atmc-btn-icon:hover .atmc-btn-icon_icon svg {
+		fill: #fff;
+	}
+
+/* Button Gray */
+.atmc-btn-gray {
+  color: #fff!important;
+  background: {{ gray }}!important;
+  border-color: {{ gray }};
+}
+  .atmc-btn-gray:hover {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+/* Button Outline Gray */
+.atmc-btn-outline-gray {
+  color: {{ gray }}!important;
+  background: none!important;
+  border-color: {{ gray }};
+}
+  .atmc-btn-outline-gray:hover {
+    color: #fff!important;
+    background: {{ gray }}!important;
+  }
+	.atmc-btn-outline-gray.atmc-btn-icon:hover .atmc-btn-icon_icon {
+		border-color: #fff;
+	}
+	.atmc-btn-outline-gray.atmc-btn-icon:hover .atmc-btn-icon_icon svg {
+		fill: #fff;
+	}
+
+/* Button Light Gray */
+.atmc-btn-lightgray {
+  color: {{ base }}!important;
+  background: {{ lightgray }}!important;
+  border-color: {{ lightgray }};
+}
+  .atmc-btn-lightgray:hover {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+/* Button Outline Light Gray */
+.atmc-btn-outline-lightgray {
+  color: {{ lightgray }}!important;
+  background: none!important;
+  border-color: {{ lightgray }};
+}
+  .atmc-btn-outline-lightgray:hover {
+    color: {{ base }}!important;
+    background: {{ lightgray }}!important;
+  }
+	.atmc-btn-outline-lightgray.atmc-btn-icon:hover .atmc-btn-icon_icon {
+		border-color: {{ base }};
+	}
+	.atmc-btn-outline-lightgray.atmc-btn-icon:hover .atmc-btn-icon_icon svg {
+		fill: {{ base }};
+	}
+
+/* Button Light */
+.atmc-btn-light {
+  color: {{ base }}!important;
+  background: {{ light }}!important;
+  border-color: {{ light }};
+}
+  .atmc-btn-light:hover {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+
+/* Button Outline Light */
+.atmc-btn-outline-light {
+  color: {{ light }}!important;
+  background: none!important;
+  border-color: {{ light }};
+}
+  .atmc-btn-outline-light:hover {
+    color: {{ base }}!important;
+    background: {{ light }}!important;
+  }
+	.atmc-btn-outline-light.atmc-btn-icon:hover .atmc-btn-icon_icon {
+		border-color: {{ base }};
+	}
+	.atmc-btn-outline-light.atmc-btn-icon:hover .atmc-btn-icon_icon svg {
+		fill: {{ base }};
+	}
+
+
+/* ----
+ * Button Icon 
+ * ---------------- */
+.atmc-btn.atmc-btn-icon {
+	position: relative;
+}
+.atmc-btn.atmc-btn-icon .atmc-btn-icon_icon {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Width */
+.atmc-btn.atmc-btn-icon .atmc-btn-icon_icon {
+	width: 3rem;
+}
+.atmc-btn.atmc-btn-icon.atmc-btn-s .atmc-btn-icon_icon {
+	width: 2.5rem;
+}
+.atmc-btn.atmc-btn-icon.atmc-btn-l .atmc-btn-icon_icon {
+	width: 4rem;
+}
+
+/* Padding */
+.atmc-btn.atmc-btn-icon {
+	padding-right: 4rem;
+}
+.atmc-btn.atmc-btn-icon .atmc-btn-icon_icon svg {
+	height: 1.5rem;
+}
+.atmc-btn.atmc-btn-s.atmc-btn-icon {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	padding-right: 3.1125rem;
+}
+.atmc-btn.atmc-btn-s.atmc-btn-icon svg {
+	height: 1rem;
+}
+.atmc-btn.atmc-btn-l.atmc-btn-icon {
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+	padding-right: 5.875rem;
+}
+.atmc-btn.atmc-btn-l.atmc-btn-icon svg {
+	height: 2rem;
+}
+

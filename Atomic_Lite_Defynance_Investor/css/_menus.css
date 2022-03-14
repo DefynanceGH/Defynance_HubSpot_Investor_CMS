@@ -1,0 +1,41 @@
+.hs-menu-wrapper ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.hs-menu-item a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.hs-menu-item:hover > a,
+.hs-menu-item:focus > a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.hs-menu-item.active a {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+{# Inline Menu #}
+
+.atmc-inline-menu {
+	
+}
+.atmc-inline-menu .hs-menu-item a {
+	padding: 0;
+	color: inherit;
+}
+.atmc-inline-menu .hs-menu-item a:hover {
+	color: {{ primary }};
+}
+.atmc-inline-menu .hs-menu-item + .hs-menu-item {
+	margin-left: 1rem;
+}

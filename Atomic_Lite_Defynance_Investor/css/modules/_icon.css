@@ -1,0 +1,26 @@
+.atmc-icon-06 > div {
+	width: 4rem;
+	height: 4rem;
+}
+.atmc-icon-06 svg {
+	height: 2rem;
+	display: block;
+}
+
+
+/* 
+ * Social Colors
+ */
+
+.atmc-social-facebook svg {
+	fill: #3b5998!important;
+}
+.atmc-social-twitter svg {
+	fill: #00acee!important;
+}
+.atmc-social-linkedin svg {
+	fill: #0e76a8!important;
+}
+.atmc-social-pinterest svg {
+	fill: #c8232c!important;
+}

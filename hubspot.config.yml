@@ -1,0 +1,12 @@
+defaultPortal: aakash@defynacne.com
+portals:
+  - name: aakash@defynacne.com
+    portalId: 21517388
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          CNLlu7T4LxIJAA0AAAAA4A0DGMyooQoghePFDSju6QwyFEGqUEUQQ34W3XZL1ZLUGHv73zDmOigAAARBAAAAeAAAAAAAAAAAAAAAAAAAAAQAAMAHAP7_MTwAAAYAAABgQhQZieKF_XZsz5aO5d70BDL_aQMH_EoDbmExUgBaAA
+        expiresAt: '2022-03-14T03:53:09.589Z'
+    personalAccessKey: >-
+      CiQwMzU4ZWEwMC0yOWUxLTQxNzktODEwMy0yMTAxODdiMzE4OGMQzKihChiF48UNKhkABeaRgnVjSaivgJ-PwhhuRp_jBouGUgbmSgNuYTE

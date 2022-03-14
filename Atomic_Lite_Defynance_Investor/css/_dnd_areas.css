@@ -1,0 +1,51 @@
+.dnd-section {
+  padding: {{ vertical_spacing/base_font_size/3 }}rem 20px;
+	position: relative;
+}
+
+@media (min-width: 768px) {
+  .dnd-section {
+    padding: {{ vertical_spacing/base_font_size/2 }}rem 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .dnd-section {
+    padding: {{ vertical_spacing/base_font_size*0.72 }}rem 20px;
+  }
+}
+
+@media (min-width: 1680px) {
+  .dnd-section {
+    padding: {{ vertical_spacing/base_font_size }}rem 20px;
+  }
+}
+
+.dnd-section > .row-fluid {
+  max-width: {{ max_width }}px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dnd-section .dnd-row + .dnd-row {
+  margin-top: 1.5rem;
+}
+
+.dnd-section .widget-type-cell {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (max-width: 767px) {
+  .dnd-section .widget-type-cell {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+	.dnd-section .dnd-row + .dnd-row,
+	.dnd-section .dnd-module + .dnd-module,
+  .dnd-section .dnd-column + .dnd-column,
+  .dnd-section .dnd-column + .dnd-module,
+  .dnd-section .dnd-module + .dnd-column {
+		margin-top: 1.5rem;
+	}
+}

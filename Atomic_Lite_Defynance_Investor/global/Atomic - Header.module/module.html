@@ -1,0 +1,35 @@
+{% if name == 'header-logo' %}
+
+		<div class="atmc-header_logo">
+			{% if header_class == 'transparent' %}
+				<a href="{{ module.url.href }}" class="atmc-header_logo_white">
+					{% if module.logo_white.src %}
+						{% set sizeAttrs = 'width="{{ module.logo_white.width }}" height="{{ module.logo_white.height }}"' %}
+						{% if module.logo_white.size_type == 'auto' %}
+							{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+						{% elif module.logo_white.size_type == 'auto_custom_max' %}
+							{% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.logo_white.max_width }}px; max-height: {{ module.logo_white.max_height }}px"' %}
+						{% endif %}
+						<img src="{{ module.logo_white.src }}" alt="{{ module.logo_white.alt }}" {{ sizeAttrs }}>
+					{% endif %}
+			  </a>
+			{% endif %}
+			<a href="{{ module.url.href }}" class="atmc-header_logo_dark">
+				{% if module.logo_dark.src %}
+					{% set sizeAttrs = 'width="{{ module.logo_dark.width }}" height="{{ module.logo_dark.height }}"' %}
+					{% if module.logo_dark.size_type == 'auto' %}
+						{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+					{% elif module.logo_dark.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.logo_dark.max_width }}px; max-height: {{ module.logo_dark.max_height }}px"' %}
+					{% endif %}
+					<img src="{{ module.logo_dark.src }}" alt="{{ module.logo_dark.alt }}" {{ sizeAttrs }}>
+				{% endif %}
+			</a>
+		</div>
+{% endif %}
+
+{% if name == 'header-menu' %}
+	<div class="atmc-header_menu {% if module.text_white %}atmc-header-white{% endif %}">
+		{% menu id="{{ module.menu }}", no_wrapper=True %}
+	</div>
+{% endif %}

@@ -1,0 +1,160 @@
+/*!
+ * Developed by GiantFocal
+ * https://www.giantfocal.com/
+*/
+
+{# Configuration variables #}
+
+{# Colors #}
+{% set base                     = theme.colors_group.base.color %}
+{% set primary                  = theme.colors_group.primary.color %}
+{% set secondary                = theme.colors_group.secondary.color %}
+
+{% set danger                   = theme.colors_group.danger.color %}
+{% set warning                  = theme.colors_group.warning.color %}
+{% set success                  = theme.colors_group.success.color %}
+{% set gray                     = theme.colors_group.gray.color %}
+{% set lightgray                = theme.colors_group.light_gray.color %}
+{% set light                    = theme.colors_group.light.color %}
+{% set dark                     = theme.colors_group.dark.color %}
+
+{# Typography #}
+{% set base_font_size             = theme.typography_group.base.size.value %}
+{% set base_font_weight           = theme.typography_group.base.variant %}
+{% set base_line_height           = "1.7" %}
+
+{% set base_font_family           = theme.typography_group.base.font %}
+
+{% set h1_font = theme.typography_group.heading_1 %}
+{% set h2_font = theme.typography_group.heading_2 %}
+{% set h3_font = theme.typography_group.heading_3 %}
+{% set h4_font = theme.typography_group.heading_4 %}
+{% set h5_font = theme.typography_group.heading_5 %}
+{% set h6_font = theme.typography_group.heading_6 %}
+
+{# Scale #}
+{% set scale_xs = ".75rem" %}
+{% set scale_s  = "1rem" %}
+{% set scale_m  = "1.5rem" %}
+{% set scale_l  = "2rem" %}
+{% set scale_xl = "3rem" %}
+
+{# Components #}
+{% set border_radius = theme.components_group.border_radius %}
+
+{# Spacing #}
+{% set vertical_spacing       = theme.spacing_group.vertical_spacing %}
+{% set max_width              = theme.spacing_group.max_width %}
+
+
+{# Footer #}
+
+
+
+{# Form #}
+{% set form_header_background           = theme.form_group.form_header_background.color %}
+{% set form_header_text_color           = theme.form_group.form_header_text_color.color %}
+{% set form_background_color            = theme.form_group.form_background_color.color %}
+{% set form_border_color                = theme.form_group.form_border_color.color %}
+{% set form_label_color                 = theme.form_group.form_label_color.color %}
+{% set form_field_background_color      = theme.form_group.form_feld_bg_color.color %}
+{% set form_field_border_color          = theme.form_group.form_field_border_color.color %}
+{% set form_field_focus_border_color    = theme.form_group.form_field_focus_border_color.color %}
+{% set form_button_text_color           = theme.form_group.form_button_text_color.color %}
+{% set form_button_background_color     = theme.form_group.form_button_bg_color.color %}
+
+
+* {
+  --base: {{ base }};
+  --primary: {{ primary }};
+  --secondary: {{ secondary }};
+  --danger: {{ danger }};
+  --warning: {{ warning }};
+  --success: {{ success }};
+  --gray: {{ gray }};
+  --lightgray: {{ lightgray }};
+  --light: {{ light }};
+  --dark: {{ dark }};
+  --border_radius: {{ border_radius }};
+
+  --primary100: {{ color_variant(primary, 200) }};
+  --primary200: {{ color_variant(primary, 150) }};
+  --primary300: {{ color_variant(primary, 100) }};
+  --primary400: {{ color_variant(primary, 50) }};
+  --primary500: {{ primary }};
+  --primary600: {{ color_variant(primary, -50) }};
+  --primary700: {{ color_variant(primary, -100) }};
+  --primary800: {{ color_variant(primary, -150) }};
+  --primary900: {{ color_variant(primary, -200) }};
+
+  --secondary100: {{ color_variant(secondary, 200) }};
+  --secondary200: {{ color_variant(secondary, 150) }};
+  --secondary300: {{ color_variant(secondary, 100) }};
+  --secondary400: {{ color_variant(secondary, 50) }};
+  --secondary500: {{ secondary }};
+  --secondary600: {{ color_variant(secondary, -50) }};
+  --secondary700: {{ color_variant(secondary, -100) }};
+  --secondary800: {{ color_variant(secondary, -150) }};
+  --secondary900: {{ color_variant(secondary, -200) }};
+
+  --gray100: {{ color_variant(gray, 200) }};
+  --gray200: {{ color_variant(gray, 150) }};
+  --gray300: {{ color_variant(gray, 100) }};
+  --gray400: {{ color_variant(gray, 50) }};
+  --gray500: {{ gray }};
+  --gray600: {{ color_variant(gray, -50) }};
+  --gray700: {{ color_variant(gray, -100) }};
+  --gray800: {{ color_variant(gray, -150) }};
+  --gray900: {{ color_variant(gray, -200) }};
+  
+  --dark100: {{ color_variant(dark, 80) }};
+  --dark200: {{ color_variant(dark, 60) }};
+  --dark300: {{ color_variant(dark, 40) }};
+  --dark400: {{ color_variant(dark, 20) }};
+  --dark500: {{ dark }};
+  --dark600: {{ color_variant(dark, -20) }};
+  --dark700: {{ color_variant(dark, -40) }};
+  --dark800: {{ color_variant(dark, -60) }};
+  --dark900: {{ color_variant(dark, -80) }};
+}
+
+
+{% include './layout.css' %}
+{% include './_reset.css' %}
+{% include './_normalize.css' %}
+{% include './_typography.css' %}
+{% include './_colors.css' %}
+{% include './_backgrounds.css' %}
+{% include './_dnd_areas.css' %}
+{% include './_forms.css' %}
+{% include './_buttons.css' %}
+{% include './_menus.css' %}
+{% include './_tables.css' %}
+{% include './_components.css' %}
+{% include './_modules.css' %}
+{% include './_animations.css' %}
+{% include './_atomic.css' %}
+
+{# Global #}
+{% include './_header.css' %}
+{% include './_footer.css' %}
+
+{# Modules #}
+{% include './modules/_blog.css' %}
+{% include './modules/_counter.css' %}
+{% include './modules/_feature.css' %}
+{% include './modules/_gallery.css' %}
+{% include './modules/_hero.css' %}
+{% include './modules/_icon.css' %}
+{% include './modules/_image.css' %}
+{% include './modules/_list.css' %}
+{% include './modules/_logo.css' %}
+{% include './modules/_product_listing.css' %}
+{% include './modules/_section_settings.css' %}
+{% include './modules/_team.css' %}
+{% include './modules/_video.css' %}
+
+
+{# Pages #}
+{% include './_system_pages.css' %}
+{% include './_blog.css' %}
